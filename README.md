@@ -1,4 +1,4 @@
 Infinitry
 =========
 
-Infinitry ThemeForest GIT
+Infinitry ThemeForest git
