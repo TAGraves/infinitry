@@ -1,0 +1,380 @@
+body {
+    font-family: 'Bitter', serif;
+}
+
+header {
+    position: fixed;
+    top: 0px;
+    background-color: #19335f;
+    height: 68px;
+    width: 100%;
+    opacity: .85;
+    z-index: 999;
+}
+
+header img {
+    margin-top: 11px;
+}
+
+nav ul {
+    padding: 0px;
+    margin: 0px;
+}
+
+nav ul li a {
+    text-align: center;
+    display: block;
+    width: 100%;
+    height: 100%;
+    line-height: 68px;
+    text-decoration: none;
+    color: #fff;
+}
+
+nav ul li a:hover {
+    background-color: #40807c;
+}
+
+#billboard {
+    height: 484px;
+    padding-top: 68px;
+    background: url(../images/billboard-1.jpg) top center;
+}
+
+#billboard .container {
+    padding: 74px 0px;
+}
+
+#billboard span {
+    margin: 0 0 7px 0;
+    height: 107px;
+    line-height: 107px;
+    padding: 0 40px 0 12px;
+    display: inline-block;
+    background: rgba(0, 0, 51, .7);
+    color: #fff;
+    font-size: 3em;
+}
+
+#billboard .special {
+    color: #cccc66;
+    font-weight: normal;
+}
+
+#who-are-we {
+    background: url(../images/border-1.png) repeat-x left bottom #fff;
+}
+
+#who-are-we h1 {
+    font-size: 3em;
+    color: #003366;
+    margin: 55px 0 13px 0;
+}
+
+#who-are-we p {
+    font-size: 1.125em;
+    color: #333;
+}
+
+#who-are-we .special {
+    color: #f99532;
+}
+
+.here-for-you {
+    font-style: italic;
+}
+
+.our-work {
+    margin-top: 70px;
+}
+
+.our-work img {
+    border: 2px solid #000066;
+    box-sizing: border-box;
+}
+
+.our-work p {
+    border-top: 1px solid #666;
+    border-bottom: 1px solid #666;
+    padding: 22px 0;
+    text-align: center;
+    font-style: italic;
+    font-size: 1.5em !important;
+}
+
+#the-team {
+    box-shadow: inset 0 5px 20px rgba(35,31,32,.5);
+    background: url(../images/the-team-bg.png);
+}
+
+#the-team h1 {
+    color: #fff;
+    font-size: 2.25em;
+    margin: 0;
+    padding-top: 10px;
+}
+
+#quote {
+    height: 250px;
+    background: url(../images/billboard-2.jpg) top center;
+    box-shadow: inset 0 -1px 20px rgba(0,0,0,.75);
+}
+
+
+#quote figure {
+    background: rgba(25, 51, 95, .6);
+    height: 107px;
+    margin-top: 68px;
+}
+
+#quote blockquote {
+    font-size: 1.5em;
+    color: #fff;
+    margin: 25px 0 0 22px;
+}
+
+#quote figcaption {
+    font-size: 1.5em;
+    color: #ffcc99;
+    font-style: italic;
+    text-align: right;
+    margin-right: 25px;
+}
+
+#what-can-we-do {
+    background: url(../images/what-can-we-do-bg.png);
+}
+
+#what-can-we-do .container {
+    padding-top: 55px;
+    background: url(../images/what-can-we-do.png) no-repeat 12px 265px;
+    color: #fff;
+    font-weight: normal;
+}
+
+#what-can-we-do h1 {
+	text-shadow: 1px -2px 1px rgba(0,0,0,.51);
+    font-size: 3em;
+    margin: 0 0 20px 0;
+}
+
+#what-can-we-do h2 {
+	text-shadow: 1px -1px 1px rgba(0,0,0,.51);
+    font-size: 1.125em;
+}
+
+#what-can-we-do .container div {
+    height: 1px;
+    background: #ffffcc;
+    margin: 22px 60px;
+    padding-right: 20px;
+}
+
+#services {
+    height: 710px;
+}
+
+#services h3 {
+    font-size: 1.875em;
+    margin: 0;
+}
+
+#services .number {
+    margin-right: 30px;
+}
+
+#services p {
+    color: #ffffcc;
+    margin: 0 50px;
+    line-height: 25px;
+}
+
+#services .special {
+    color: #fff;
+    font-weight: bold;
+}
+
+#services .graphics p {
+    width: 530px;
+}
+
+#services .photography {
+    margin-top: 120px;
+}
+
+#services .web-development {
+    margin-top: 150px;
+}
+
+#services .web-development p {
+    width: 650px;
+}
+
+#endless-possibilities {
+    height: 112px;
+    background: url(../images/endless-possibilities.png);
+}
+
+#endless-possibilities .container {
+    height: 74px;
+    padding-top: 38px;
+    background: url(../images/endless-possibilities-2.png) -40px 0px;
+}
+
+#endless-possibilities span {
+    margin-left: 253px;
+    font-size: 1.25em;
+    color: #666;
+}
+
+footer {
+    background: url(../images/footer-bg.png);
+}
+
+footer h1 {
+    font-size: 1.875em;
+    color: #fff;
+}
+
+#contact p {
+    color: #ccffcc;
+    font-size: 1.125em;
+    margin: 12px 0;
+}
+
+#contact input, #contact textarea {
+    box-sizing: border-box;
+    border: 1px solid #66cc99;
+    background: #b8e8d0;
+    height: 52px;
+    color: #999;
+    font-size: 1.125em;
+    padding-left: 20px;
+    margin-bottom: 10px;
+    outline: 0;
+}
+
+#contact input:focus, #contact textarea:focus {
+    border: 1px solid #006633;
+    background: #fff;
+    color: #666;
+}
+
+#contact textarea {
+    margin-bottom: 18px !important;
+    height: 142px !important;
+    padding-top: 18px;
+}
+
+#contact button {
+    height: 50px;
+    border: 0;
+    border-top: 1px solid #ffcc99;
+    background: #fb9732;
+    color: #fff;
+    font-size: 1.125em;
+    outline: 0;
+}
+
+footer article h1 {
+    color: #ccffcc;
+    font-size: 1.375em;
+}
+
+footer article p {
+    font-size: .875em;
+    color: #fff;
+    line-height: 25px;
+}
+
+footer article p a {
+    color: #ccffcc;
+    font-style: italic;
+    text-decoration: none;
+}
+
+footer .after-article {
+    height: 1px;
+    background: #b8e8d0;
+    opacity: .4;
+    margin: 25px 0;
+}
+
+footer .tweet {
+    color: #ccffcc;
+    font-size: .875em;
+}
+
+footer .tweet .mention, footer .where-we-are {
+    color: #fff;
+}
+
+#copyright {
+    color: #ccffcc;
+    font-size: .75em;
+    margin-top: 40px;
+}
+
+/* Page */
+
+ol {
+    list-style-type: none;
+    padding: 0;
+}
+
+h1, h2, h3 {
+    font-weight: normal;
+}
+
+.right {
+    float: right;
+}
+
+::-webkit-input-placeholder { font-style: italic; }
+::-moz-placeholder { font-style: italic; } /* firefox 19+ */
+:-ms-input-placeholder { font-style: italic; } /* ie */
+input:-moz-placeholder { font-style: italic; }
+
+/* #Media Queries
+================================================== */
+
+	/* Smaller than standard 960 (devices and browsers) */
+	@media only screen and (max-width: 959px) {}
+
+	/* Tablet Portrait size to standard 960 (devices and browsers) */
+	@media only screen and (min-width: 768px) and (max-width: 959px) {}
+
+	/* All Mobile Sizes (devices and browser) */
+	@media only screen and (max-width: 767px) {
+        header {
+            position: static;
+        }
+    
+        nav {
+            display: none !important;
+        }
+        
+        header .container div {
+            text-align: center;
+        }
+    
+        #billboard {
+            height: 325px;
+            padding-top: 10px;
+        }
+    
+        #billboard .container div, #billboard span {
+            height: 67px;
+        }
+    
+        #billboard span {
+            font-size: 1.25em;
+            bottom: -15px;
+        }
+    }
+
+	/* Mobile Landscape Size to Tablet Portrait (devices and browsers) */
+	@media only screen and (min-width: 480px) and (max-width: 767px) {}
+
+	/* Mobile Portrait Size to Mobile Landscape Size (devices and browsers) */
+	@media only screen and (max-width: 479px) {}
