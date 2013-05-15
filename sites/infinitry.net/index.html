@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <!--[if lt IE 7 ]><html class="ie ie6" lang="en"><![endif]-->
-<!--[if IE 7 ]><html class="ie ie7" lang="en"><![endif]-->
-<!--[if IE 8 ]><html class="ie ie8" lang="en"><![endif]-->
-<!--[if IE 9 ]><html class="ie ie9" lang="en"><![endif]-->
-<!--[if (gt IE 9)|!(IE)]><!--><html lang="en"><!--<![endif]-->
+<!--[if IE 7 ]><html class="noscroll ie ie7" lang="en"><![endif]-->
+<!--[if IE 8 ]><html class="noscroll ie ie8" lang="en"><![endif]-->
+<!--[if IE 9 ]><html class="noscroll ie ie9" lang="en"><![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--><html class="noscroll" lang="en"><!--<![endif]-->
 <head>
 	<meta charset="utf-8">
 
@@ -30,128 +30,130 @@
         <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
         <script>window.jQuery || document.write(unescape('%3Cscript src="js/jquery-2.0.0-min.js"%3E%3C/script%3E'))</script>
     <!--<![endif]-->
+    <script src="js/plugins.js"></script>
     <script src="js/global.js"></script>
 </head>
 <body>
-    <header>
+    <section id="billboard-text">
+        <span>Let's work together</span><br>
+        <span>to make your website</span><br>
+        <span><b class="special">beautiful</b> and <b class="special">functional</b>.</span>
+    </section>
+    <div id="billboard"></div>
+    <header>        
         <div class="container">
             <div class="alpha three columns"><img src="images/logo.png" alt="infinitry"></div>
-            <nav class="omega eight columns offset-by-three">
+            <nav class="omega six columns offset-by-five">
                 <ul>
                     <li class="alpha two columns"><a href="#who-we-are">About</a></li>
                     <li class="two columns"><a href="#what-can-we-do">Services</a></li>
-                    <li class="two columns"><a href="#contact">Contact</a></li>
-                    <li class="omega two columns"><a href="blog">Blog</a></li>
+                    <li class="omega two columns"><a href="#contact">Contact</a></li>
                 </ul>
             </nav>
+            <a href="#" class="nav-starter">View Site</a>
         </div>
     </header>
-    <section id="billboard">
-        <div class="container">
-            <span>Let's work together</span>
-            <span>to make your website</span>
-            <span><b class="special">beautiful</b> and <b class="special">functional</b>.</span>
-        </div>
-    </section>
-    <section id="who-are-we">
-        <div class="container">
-            <div class="alpha eight columns">
-                <h1>Who are we?</h1>
-                <p>A hip, upstart design firm with <span class="special">infinite</span> possibilities. Infinitry began as two kids in middle school messing around with web design. Those two kids, Tommy Graves and Brandon Carroll, had no idea what they were getting themselves into.</p>
-                <p>After entering high school, they made their first attempt to start a web business, called Generation Studio. They made a website, distributed business cards, and tried to get the word out. But aside from a few small jobs from friends and family, they really didn't get enough business to sustain Generation Studio. That's when they decided to take things in a new direction.</p>
-                <p>They -- we -- decided to start researching. We looked at what worked for other people. We looked at what didn't. We found small people with big ideas and incorporated those into our business model. And we learned more than we ever imagined we would. Today, we are Infinitry.</p>
-                <p class="here-for-you">Today, we are here for you.</p>
-            </div>
-            <div class="our-work omega eight columns">
-                <img class="eight columns" src="images/1800listing.jpg" alt="We designed a website for 1-800-Listing">
-                <p class="eight columns">We want your company to be successful and memorable, and we’ll work with you to make sure it happens.</p>
-                <div class="eight columns">
-                    <img src="images/compendium1.png" alt="We developed an educational suite">
-                    <img class="right" src="images/compendium2.png" alt="The educational suite had mobile support.">
+    <div id="content">
+        <section id="who-are-we">
+            <div class="container">
+                <div class="alpha eight columns">
+                    <h1>Who are we?</h1>
+                    <p>A hip, upstart design firm with <span class="special">infinite</span> possibilities. Infinitry began as two kids in middle school messing around with web design. Those two kids, Tommy Graves and Brandon Carroll, had no idea what they were getting themselves into.</p>
+                    <p>After entering high school, they made their first attempt to start a web business, called Generation Studio. They made a website, distributed business cards, and tried to get the word out. But aside from a few small jobs from friends and family, they really didn't get enough business to sustain Generation Studio. That's when they decided to take things in a new direction.</p>
+                    <p>They -- we -- decided to start researching. We looked at what worked for other people. We looked at what didn't. We found small people with big ideas and incorporated those into our business model. And we learned more than we ever imagined we would. Today, we are Infinitry.</p>
+                    <p class="here-for-you">Today, we are here for you.</p>
+                </div>
+                <div class="our-work omega eight columns">
+                    <img class="eight columns" src="images/1800listing.jpg" alt="We designed a website for 1-800-Listing">
+                    <p class="eight columns">We want your company to be successful and memorable, and we’ll work with you to make sure it happens.</p>
+                    <div class="eight columns">
+                        <img src="images/compendium1.png" alt="We developed an educational suite">
+                        <img class="right" src="images/compendium2.png" alt="The educational suite had mobile support.">
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
-    <section id="the-team">
-        <div class="container">
-            <h1>The team</h1>
-        </div>
-    </section>
-    <section id="quote">
-        <div class="container">
-            <figure class="thirteen columns alpha">
-                <blockquote>&ldquo;People ignore designs that ignore them. Plain and simple.&rdquo;</blockquote>
-                <figcaption>- Brandon Carroll</figcaption>
-            </figure>
-        </div>
-    </section>
-    <section id="what-can-we-do">
-        <div class="container">
-            <h1>What can we do for you?</h1>
-            <h2>The short answer: Whatever you need. The long answer: We offer a variety of services that will make your business successful. Here's some of them:</h2>
-            <div class="fourteen columns"></div>
-            <section id="services">
-                <ol>
-                    <li class="graphics">
-                        <h3><span class="number">1.</span>Graphics design and brand development</h3>
-                        <p>We're experts at design and branding. We'll discover what you want - even when you don't know what that is - and we'll <span class="special">bring it to life</span>. With your help, we'll work to pioneer the next big trend in design.</p>
-                    </li>
-                    <li class="photography offset-by-three">
-                        <h3><span class="number">2.</span>Photography and photo content</h3>
-                        <p>We're great a photography as well. If you need some stunning images for your freshly designed webpage, or even if you just need some help getting photographs for other purposes, <span class="special">get in touch</span>. We'd love to help you.</p>
-                    </li>
-                    <li class="web-development">
-                        <h3><span class="number">3.</span>Web development and maintenance</h3>
-                        <p>Once we've worked with you to produce your design, we'll make it come alive. With the newest web technology by our side, we'll create a site that <span class="special">works for everyone</span>. We'll even include intuitive administrative functionality so you can manage your site yourself.</p>
-                    </li>
-                </ol>
-            </section>
-        </div>
-    </section>
-    <section id="endless-possibilities">
-        <div class="container">
-            <span>With us, your possibilities are endless.</span>
-        </div>
-    </section>
-    <footer>
-        <div class="container">
-            <div id="contact" class="alpha five columns">
-                <h1>Get in touch</h1>
-                <p>Think we can help you?</p>
-                <p>Just want to say hello?</p>
-                <form>
-                    <input class="alpha five columns" type="text" name="name" placeholder="What's your name?">
-                    <input class="alpha five columns" type="text" name="phone" placeholder="How about your number?">
-                    <input class="alpha five columns" type="text" name="email" placeholder="And your email?">
-                    <textarea class="alpha five columns" name="message" placeholder="Now tell us your story"></textarea>
-                    <button class="alpha three columns">Send it!</button>
-                </form>
+        </section>
+        <section id="the-team">
+            <div class="container">
+                <h1>The team</h1>
             </div>
-            <div class="omega eleven columns">
-                <h1>Hot off the press</h1>
-                <article>
-                    <h1>Random blog title</h1>
-                    <p>Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit. Nam nec tellus a odi... <a class="read-more" href="#">(Read More)</a></p>
-                </article>
-                <div class="after-article alpha omega eleven columns"></div>
-                <div class="alpha five columns">
-                    <h1>Recent tweets</h1>
-                    <p class="tweet">This is a random tweet</p>
-                    <p class="tweet">This is another random tweet, except it's longer and it has a <span class="mention">@mention</span></p>
-                    <p class="tweet">This is another random tweet, except it's longer and it has no mention</p>
-                    <p class="tweet">This is another random tweet, except it's longer and it has no mention</p>
+        </section>
+        <section id="quote">
+            <div class="container">
+                <figure class="thirteen columns alpha">
+                    <blockquote>&ldquo;People ignore designs that ignore them. Plain and simple.&rdquo;</blockquote>
+                    <figcaption>- Brandon Carroll</figcaption>
+                </figure>
+            </div>
+        </section>
+        <section id="what-can-we-do">
+            <div class="container">
+                <h1>What can we do for you?</h1>
+                <h2>The short answer: Whatever you need. The long answer: We offer a variety of services that will make your business successful. Here's some of them:</h2>
+                <div class="fourteen columns"></div>
+                <section id="services">
+                    <ol>
+                        <li class="graphics">
+                            <h3><span class="number">1.</span>Graphics design and brand development</h3>
+                            <p>We're experts at design and branding. We'll discover what you want - even when you don't know what that is - and we'll <span class="special">bring it to life</span>. With your help, we'll work to pioneer the next big trend in design.</p>
+                        </li>
+                        <li class="photography offset-by-three">
+                            <h3><span class="number">2.</span>Photography and photo content</h3>
+                            <p>We're great a photography as well. If you need some stunning images for your freshly designed webpage, or even if you just need some help getting photographs for other purposes, <span class="special">get in touch</span>. We'd love to help you.</p>
+                        </li>
+                        <li class="web-development">
+                            <h3><span class="number">3.</span>Web development and maintenance</h3>
+                            <p>Once we've worked with you to produce your design, we'll make it come alive. With the newest web technology by our side, we'll create a site that <span class="special">works for everyone</span>. We'll even include intuitive administrative functionality so you can manage your site yourself.</p>
+                        </li>
+                    </ol>
+                </section>
+            </div>
+        </section>
+        <section id="endless-possibilities">
+            <div class="container">
+                <span>With us, your possibilities are endless.</span>
+            </div>
+        </section>
+        <footer>
+            <div class="container">
+                <div id="contact" class="alpha five columns">
+                    <h1>Get in touch</h1>
+                    <p>Think we can help you?</p>
+                    <p>Just want to say hello?</p>
+                    <form>
+                        <input class="alpha five columns" type="text" name="name" placeholder="What's your name?">
+                        <input class="alpha five columns" type="text" name="phone" placeholder="How about your number?">
+                        <input class="alpha five columns" type="text" name="email" placeholder="And your email?">
+                        <textarea class="alpha five columns" name="message" placeholder="Now tell us your story"></textarea>
+                        <button class="alpha three columns">Send it!</button>
+                    </form>
                 </div>
-                <div class="omega six columns">
-                    <h1>Where we are</h1>
-                    <p class="where-we-are">We are located in the Central Ohio and Southeastern Ohio areas. We have lived here most of our lives, and we love helping businesses and individuals close to home.</p>
-                    <p class="where-we-are">If you or your business is located in this area, please feel free to contact us and set up an appointment so we can get you started as soon as possible... We can’t wait to hear from you!</p>
+                <div class="omega eleven columns">
+                    <h1>Hot off the press</h1>
+                    <article>
+                        <h1>Random blog title</h1>
+                        <p>Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit. Nam nec tellus a odi... <a class="read-more" href="#">(Read More)</a></p>
+                    </article>
+                    <div class="after-article alpha omega eleven columns"></div>
+                    <div class="alpha five columns">
+                        <h1>Recent tweets</h1>
+                        <p class="tweet">This is a random tweet</p>
+                        <p class="tweet">This is another random tweet, except it's longer and it has a <span class="mention">@mention</span></p>
+                        <p class="tweet">This is another random tweet, except it's longer and it has no mention</p>
+                        <p class="tweet">This is another random tweet, except it's longer and it has no mention</p>
+                    </div>
+                    <div class="omega six columns">
+                        <h1>Where we are</h1>
+                        <p class="where-we-are">We are located in the Central Ohio and Southeastern Ohio areas. We have lived here most of our lives, and we love helping businesses and individuals close to home.</p>
+                        <p class="where-we-are">If you or your business is located in this area, please feel free to contact us and set up an appointment so we can get you started as soon as possible... We can’t wait to hear from you!</p>
+                    </div>
+                </div>
+                <div class="alpha sixteen columns" id="copyright">
+                    <span>&copy; 2013 Infinitry. We do all our own designs.</span>
+                    <img src="images/copyright.png" alt="palette">
                 </div>
             </div>
-            <div class="alpha sixteen columns" id="copyright">
-                <span>&copy; 2013 Infinitry. We do all our own designs.</span>
-                <img src="images/copyright.png" alt="palette">
-            </div>
-        </div>
-    </footer>
+        </footer>
+    </div>
 </body>
 </html>

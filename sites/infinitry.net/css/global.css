@@ -1,19 +1,71 @@
-body {
+body, html {
     font-family: 'Bitter', serif;
+    height: 100%;
+}
+
+html.noscroll {
+    position: fixed; 
+    overflow-y: scroll;
+    width: 100%;
+}
+
+#billboard {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    height: 100%;
+    width: 100%;
+    background: url(../images/billboard-1.jpg) no-repeat center center;
+    background-attachment: fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+#billboard-text {
+    position: relative;
+    height: 342px;
+    width: 940px;
+    top: 50%;
+    margin-top: -171px;
+    left: 50%;
+    margin-left: -470px;
+    z-index: 1;
+}
+
+#billboard-text span {
+    margin: 0 0 7px 0;
+    height: 107px;
+    line-height: 107px;
+    padding: 0 25px;
+    background: rgba(0, 102, 153, .8);
+    color: #fff;
+    font-size: 4.5em;
+    display: inline-block;
+}
+
+#billboard-text .special {
+    color: #cccc66;
+    font-weight: normal;
 }
 
 header {
     position: fixed;
-    top: 0px;
-    background-color: #19335f;
-    height: 68px;
+    bottom: 0px;
+    background: rgba(0, 0, 0, .9);
+    height: 70px;
     width: 100%;
-    opacity: .85;
     z-index: 999;
 }
 
 header img {
-    margin-top: 11px;
+    margin-top: 12px;
+}
+
+nav {
+    position: relative;
+    right: -2000px;
 }
 
 nav ul {
@@ -26,7 +78,7 @@ nav ul li a {
     display: block;
     width: 100%;
     height: 100%;
-    line-height: 68px;
+    line-height: 70px;
     text-decoration: none;
     color: #fff;
 }
@@ -35,30 +87,24 @@ nav ul li a:hover {
     background-color: #40807c;
 }
 
-#billboard {
-    height: 484px;
-    padding-top: 68px;
-    background: url(../images/billboard-1.jpg) top center;
+
+header .nav-starter {
+    width: 71px;
+    height: 70px;
+    text-indent: -9999px;
+    background: url(../images/nav-starter.png);
+    float: right;
 }
 
-#billboard .container {
-    padding: 74px 0px;
+header .nav-starter:hover {
+    background-position: 0px 70px;
 }
 
-#billboard span {
-    margin: 0 0 7px 0;
-    height: 107px;
-    line-height: 107px;
-    padding: 0 40px 0 12px;
-    display: inline-block;
-    background: rgba(0, 0, 51, .7);
-    color: #fff;
-    font-size: 3em;
-}
-
-#billboard .special {
-    color: #cccc66;
-    font-weight: normal;
+#content {
+    padding-top: 70px;
+    position: relative;
+    top: 100%;
+    z-index: 2;
 }
 
 #who-are-we {
