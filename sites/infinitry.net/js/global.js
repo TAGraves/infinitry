@@ -14,7 +14,12 @@
         $('header').animate({ //move nav to top, change its bg, and get rid of the button
              bottom: windowHeight-70,
              'background-color': 'rgba(25, 51, 95, .85)'
-        }, 750).find('.nav-starter').fadeOut(500);
+        }, 750, function () {
+            $(this).css({
+                bottom: 'auto',
+                top: 0
+            });
+        }).find('.nav-starter').fadeOut(500);
         
         $('nav').animate({ //slide menu in
             right: 0
@@ -44,7 +49,10 @@
             right: -2000
         }, 750);
         
-        $('header').animate({ //move nav to bottom, change its bg, and show the button
+        $('header').css({
+            top: 'auto',
+            bottom: windowHeight-70
+        }).animate({ //move nav to bottom, change its bg, and show the button
              bottom: 0,
              'background-color': 'rgba(0, 0, 0, .9)'
         }, 750).find('.nav-starter').fadeIn(500);
@@ -54,35 +62,41 @@
     
     var route = function (state) {
         var scrollTo = $('#' + state).position().top;
-        $('html, body').animate({scrollTop: scrollTo-70}, 500);
+        $('html, body').stop().animate({scrollTop: scrollTo-70}, 500);
     }
     
     var History = window.History;
     
+    History.silentStateChange = function (data, title, state) {
+        data.silent = true;
+        History.replaceState(data, title, state);
+    }
+    
     History.Adapter.bind(window,'statechange',function(){
         var State = History.getState();
-        if (State.data.state === "splash") {
-            restart();
-        } else {
-            if ($('.nav-starter').is(':visible')) { //splash screen is showing
-                start(function () {
-                    route(State.data.state);
-                });
+        if (!State.data.silent) {
+            if (State.data.state === "splash" || typeof State.data.state === "undefined") {
+                restart();
             } else {
-                route(State.data.state);
+                if ($('.nav-starter').is(':visible')) { //splash screen is showing
+                    start(function () {
+                        route(State.data.state);
+                    });
+                } else {
+                    route(State.data.state);
+                }
             }
-            
         }
     });
     
     $(function () {
-        
+        $('html, body').scrollTop(0);
         //if index.html, push splash state; otherwise, route to correct state
         var state = History.getState().data.state;
         
-        if (typeof state === "undefined" || state === "splash") {
-            History.pushState({state: 'splash'}, "Infinitry", "?state=splash");
-        } else {
+        if (typeof state !== "undefined" && state !== "splash") {
+            //History.silentStateChange({state: 'splash'}, "Infinitry", "?state=splash");
+        //} else {
             start(function () {
                 route(state);   
             });
@@ -91,12 +105,29 @@
         $('nav a').click(function (e) {
             e.preventDefault();
             var state = $(this).attr('href').split('?state=')[1],
-                title = $(this).data('stateTitle');
-            History.pushState({state: state}, title, '?state=' + state);
+                title = $('#' + state).data('statetitle');
+            if (state === History.getState().data.state) {
+                route(state);
+            } else {
+                History.pushState({state: state}, title, '?state=' + state);
+            }
         });
         
-        $(window).resize(function () {}).trigger('resize');
+        $(window).resize(function () {
+        }).trigger('resize');
 
+        $(window).scroll(function () { //scrolling magic for URLs
+            var sectionInView = $('.container:in-viewport').parent('[data-statetitle]'),
+                title = sectionInView.data('statetitle'),
+                state = sectionInView.attr('id');
+            
+            if (typeof title !== "undefined") {
+                $('nav a.active').removeClass('active');
+                $('nav a[href="?state=' + state + '"]').addClass('active');
+            }
+            
+        });
+        
         //Starter
         $('.nav-starter').click(function (e) {
             e.preventDefault();

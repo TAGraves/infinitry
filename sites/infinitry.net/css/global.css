@@ -64,6 +64,7 @@ header img {
 }
 
 nav {
+    float: right !important;
     position: relative;
     right: -2000px;
 }
@@ -83,7 +84,7 @@ nav ul li a {
     color: #fff;
 }
 
-nav ul li a:hover {
+nav ul li a:hover, nav .active {
     background-color: #40807c;
 }
 
@@ -94,6 +95,8 @@ header .nav-starter {
     text-indent: -9999px;
     background: url(../images/nav-starter.png);
     float: right;
+    position: absolute;
+    right: 0;
 }
 
 header .nav-starter:hover {
