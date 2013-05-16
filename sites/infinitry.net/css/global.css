@@ -284,10 +284,11 @@ header .nav-starter:hover {
 #endless-possibilities .second-parallax {
     height: 191px;
     background: url(../images/endless-possibilities-3.png) center -25px no-repeat;
+    margin-left: .9px; /* Fix background 1px offset bug */
 }
 
 #endless-possibilities .container {
-    line-height: 172px;
+    line-height: 168px;
     text-align: center;
 }
 
