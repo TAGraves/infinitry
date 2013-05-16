@@ -13,7 +13,7 @@
         
         $('header').animate({ //move nav to top, change its bg, and get rid of the button
              bottom: windowHeight-70,
-             'background-color': 'rgba(25, 51, 95, .85)'
+             'background-color': 'rgba(25, 51, 95, .97)'
         }, 750, function () {
             $(this).css({ //We change to a non-calculated property here for screen resizing.
                 bottom: 'auto',
