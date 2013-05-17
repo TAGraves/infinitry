@@ -21,7 +21,8 @@
             $(this).css({ //We change to a non-calculated property here for screen resizing.
                 bottom: 'auto',
                 top: 0
-            });
+            }).addClass('started');
+            
         }).find('.nav-starter').fadeOut(500);
         
         $('nav').animate({ //slide menu in
@@ -58,7 +59,7 @@
         }).animate({ //move nav to bottom, change its bg, and show the button
              bottom: 0,
              'background-color': 'rgba(0, 0, 0, .9)'
-        }, 750).find('.nav-starter').fadeIn(500);
+        }, 750).removeClass('started').find('.nav-starter').fadeIn(500);
         
         $('html').addClass('noscroll'); //disable scrolling
     };

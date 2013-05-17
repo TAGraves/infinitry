@@ -1,0 +1,19 @@
+#billboard-text span {
+    background: url(../images/billboard-text-ie.png);
+}
+
+header {
+    background: url(../images/header-ie.png);
+}
+
+#quote figure {
+    background: url(../images/quote-ie.png);
+}
+
+.started {
+    background: url(../images/header-started-ie.png);
+}
+
+#contact input {
+    line-height: 52px;
+}

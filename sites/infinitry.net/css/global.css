@@ -301,7 +301,10 @@ header .nav-starter:hover {
 
 #endless-possibilities {
     height: 191px;
-    background: url(../images/endless-possibilities-2.png) center center no-repeat #fff;
+    background-color: #fff;
+    background-image: url('../images/endless-possibilities-2.png');
+    background-position: center center;
+    background-repeat: no-repeat;
     background-attachment: fixed;
 }
 
