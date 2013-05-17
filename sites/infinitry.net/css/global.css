@@ -3,6 +3,10 @@ body, html {
     height: 100%;
 }
 
+input, button, textarea {
+    font-family: 'Bitter', serif;
+}
+
 html.noscroll {
     position: fixed; 
     overflow-y: scroll;
@@ -352,6 +356,8 @@ footer h1 {
     padding-left: 20px;
     margin-bottom: 10px;
     outline: 0;
+    -webkit-appearance: none;
+    border-radius: 0;
 }
 
 #contact input:focus, #contact textarea:focus {
@@ -362,8 +368,9 @@ footer h1 {
 
 #contact textarea {
     margin-bottom: 18px !important;
-    height: 142px !important;
+    height: 142px;
     padding-top: 18px;
+    resize: vertical;
 }
 
 #contact button {
@@ -443,6 +450,7 @@ footer .tweet .mention, footer .where-we-are {
     color: #ccffcc;
     font-size: .875em;
     margin-top: 50px;
+    padding-bottom: 60px;
 }
 
 /* Page */
@@ -468,11 +476,129 @@ input:-moz-placeholder { font-style: italic; }
 /* #Media Queries
 ================================================== */
 
+    /* All retina */
+    @media only screen and (min--moz-device-pixel-ratio: 2),
+    only screen and (-o-min-device-pixel-ratio: 2/1),
+    only screen and (-webkit-min-device-pixel-ratio: 2),
+    only screen and (min-device-pixel-ratio: 2) {
+        #quote {
+            background-image: url(../images/billboard-2-retina.jpg);
+        }
+    
+        #footer {
+            background: url(../images/footer-bg-retina.png);
+        }
+        
+        #what-can-we-do {
+            background: url(../images/what-can-we-do-bg-retina.png);
+        }
+    
+        #the-team {
+            background: url(../images/the-team-bg-retina.png);
+        }
+
+    }
+
 	/* Smaller than standard 960 (devices and browsers) */
 	@media only screen and (max-width: 959px) {}
 
+    /* All iPad */
+    @media only screen and (min-device-width : 768px) and (max-device-width : 1024px) {
+        #endless-possibilities {
+            background-attachment: scroll;
+        }
+    
+        #quote {
+            background-attachment: scroll;
+            background-position: center -40px;
+        }
+    }
+
 	/* Tablet Portrait size to standard 960 (devices and browsers) */
-	@media only screen and (min-width: 768px) and (max-width: 959px) {}
+	@media only screen and (min-width: 768px) and (max-width: 959px) {
+        #billboard-text {
+            width: 768px;
+            margin-left: -384px; /*Need to find out why numbers higher (e.g. -383) break portrait! */
+        }
+    
+        #billboard-text span {
+            font-size: 3em;
+        }
+    
+        nav {
+            width: 300px !important;
+        }
+    
+        nav ul li {
+            width: 100px !important;
+        }
+    
+    
+        .our-work div img {
+            width: 180px;
+        }
+    
+        #quote figcaption, #quote blockquote {
+            font-size: 1.3em;
+        }
+    
+        footer h1 {
+            font-size: 1.5em;
+            vertical-align: top;
+        }
+    
+        #contact input, #contact textarea {
+            font-size: 1em;
+            padding-left: 15px;
+        }
+    
+        #location-icon {
+            top: -5px;
+        }
+    
+        #blog-icon {
+            top: -4px;
+        }
+    
+        #what-can-we-do .container {
+            background: url(../images/what-can-we-do-tablet-portrait.png) no-repeat 12px 265px;;
+        }
+    
+        #what-can-we-do h1, #what-can-we-do h2, #services {
+            margin-left: 10px;
+        }
+    
+        #what-can-we-do .container div {
+            padding-right: 0px;
+        }
+        
+        #services h3 {
+            font-size: 1.5em;
+        }
+    
+        #services .graphics p {
+            width: 380px;
+        }
+    
+        #services .photography {
+            margin-top: 79px;
+        }
+    
+        #services .web-development {
+            margin-top: 129px;
+        }
+    
+        #services .web-development p {  
+            width: 450px;
+        }
+    
+        #endless-possibilities .second-parallax {
+            background-image: url(../images/endless-possibilities-3-tablet-portrait.png);
+        }
+    
+        #endless-possibilities span {
+            margin-left: -52px;
+        }
 
 	/* All Mobile Sizes (devices and browser) */
 	@media only screen and (max-width: 767px) {}
