@@ -8,7 +8,10 @@
             contentTop = content.position().top,
             fnSet = (typeof fn !== "undefined");
         
-        content.css('top', contentTop - 171); //this calculation ensures content moves at same speed as the menu
+        content.css({
+            top: 'auto', //fix Firefox whitespace bug
+            marginTop: contentTop - 171 //this calculation ensures content moves at same speed as the menu
+        }); 
         $('html').removeClass('noscroll'); //allow scrolling
         
         $('header').animate({ //move nav to top, change its bg, and get rid of the button
@@ -27,7 +30,7 @@
         
         $('#billboard-text').animate({top: -342}, 750); //slide billboard text out
         
-        content.animate({top: -171}, 750, function () { //slide content in
+        content.animate({marginTop: -171}, 750, function () { //slide content in
             if (fnSet) {
                 fn(); //run callback once content is visible
             } else {
@@ -134,5 +137,12 @@
                 }
             });
         });
+        
+        //Stretch footer to 100% height
+        $(window).resize(function () {
+            var windowHeight = $(window).height();
+            $('footer .container').css('minHeight', windowHeight - 110); //not sure why, but it's always 70px too tall - and take off 40 more for padding
+        }).trigger('resize'); //stretch footer on page load
+        
     });
 }(jQuery));

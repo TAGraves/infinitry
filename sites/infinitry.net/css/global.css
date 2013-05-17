@@ -89,7 +89,7 @@ nav ul li a:hover {
 }
 
 nav .active {
-    background-color: #40807c;
+    background-color: #40807c !important;
 }
 
 
@@ -144,6 +144,7 @@ header .nav-starter:hover {
 .our-work img {
     border: 2px solid #000066;
     box-sizing: border-box;
+    -moz-box-sizing: border-box;
 }
 
 .our-work p {
@@ -165,6 +166,29 @@ header .nav-starter:hover {
     font-size: 2.25em;
     margin: 0;
     padding-top: 10px;
+}
+
+.team-box {
+    display: none;
+    height: 350px;
+    width: 340px;
+    padding: 20px;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    background: url(../images/the-team-pattern.jpg);
+    -webkit-box-shadow: 0 5px 10px rgba(35,31,32,.75);
+	-moz-box-shadow: 0 5px 10px rgba(35,31,32,.75);
+	box-shadow: 0 5px 10px rgba(35,31,32,.75);
+}
+
+.team-active {
+    width: 640px;
+}
+
+.team-box img {
+    -webkit-box-shadow: 0 0 10px rgba(102,102,51,.15);
+	-moz-box-shadow: 0 0 10px rgba(102,102,51,.15);
+	box-shadow: 0 0 10px rgba(102,102,51,.15);
 }
 
 #quote {
@@ -301,9 +325,14 @@ footer {
     background: url(../images/footer-bg.png);
 }
 
+#footer .container {
+    padding-top: 40px;
+}
+
 footer h1 {
     font-size: 1.875em;
     color: #fff;
+    clear: both;
 }
 
 #contact p {
@@ -314,6 +343,7 @@ footer h1 {
 
 #contact input, #contact textarea {
     box-sizing: border-box;
+    -moz-box-sizing: border-box;
     border: 1px solid #66cc99;
     background: #b8e8d0;
     height: 52px;
@@ -327,7 +357,7 @@ footer h1 {
 #contact input:focus, #contact textarea:focus {
     border: 1px solid #006633;
     background: #fff;
-    color: #666;
+    color: #ccc;
 }
 
 #contact textarea {
@@ -339,11 +369,24 @@ footer h1 {
 #contact button {
     height: 50px;
     border: 0;
-    border-top: 1px solid #ffcc99;
     background: #fb9732;
     color: #fff;
     font-size: 1.125em;
     outline: 0;
+}
+
+#contact button:hover {
+    border-top: 1px solid #ffcc99;
+}
+
+#contact button:hover span {
+    position: relative;
+    top: -1px;
+    opacity: 1;
+}
+
+#contact button span {
+    opacity: .6;
 }
 
 footer article h1 {
@@ -379,10 +422,27 @@ footer .tweet .mention, footer .where-we-are {
     color: #fff;
 }
 
+.footer-icon {
+    position: relative;
+    left: 8px;
+}
+
+#location-icon {
+    top: 6px;
+}
+
+#twitter-icon {
+    top: 3px;
+}
+
+#blog-icon {
+    top: 8px;
+}
+
 #copyright {
     color: #ccffcc;
-    font-size: .75em;
-    margin-top: 40px;
+    font-size: .875em;
+    margin-top: 50px;
 }
 
 /* Page */
@@ -415,33 +475,7 @@ input:-moz-placeholder { font-style: italic; }
 	@media only screen and (min-width: 768px) and (max-width: 959px) {}
 
 	/* All Mobile Sizes (devices and browser) */
-	@media only screen and (max-width: 767px) {
-        header {
-            position: static;
-        }
-    
-        nav {
-            display: none !important;
-        }
-        
-        header .container div {
-            text-align: center;
-        }
-    
-        #billboard {
-            height: 325px;
-            padding-top: 10px;
-        }
-    
-        #billboard .container div, #billboard span {
-            height: 67px;
-        }
-    
-        #billboard span {
-            font-size: 1.25em;
-            bottom: -15px;
-        }
-    }
+	@media only screen and (max-width: 767px) {}
 
 	/* Mobile Landscape Size to Tablet Portrait (devices and browsers) */
 	@media only screen and (min-width: 480px) and (max-width: 767px) {}
