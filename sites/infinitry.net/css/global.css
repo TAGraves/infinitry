@@ -1,3 +1,16 @@
+#some-of-our-work {
+    height: 550px;
+    background: url(../images/blue-bg.png);
+    -webkit-box-shadow: inset 0 5px 20px rgba(35,31,32,.5);
+	-moz-box-shadow: inset 0 5px 20px rgba(35,31,32,.5);
+	box-shadow: inset 0 5px 20px rgba(35,31,32,.5);
+}
+
+#some-of-our-work .container {
+    background: url(../images/hack.png) no-repeat center 58px;
+    height: 100%;
+}
+
 body, html {
     font-family: 'Bitter', serif;
     height: 100%;
@@ -54,23 +67,101 @@ html.noscroll {
     font-weight: normal;
 }
 
-header {
+#header-pre {
     position: fixed;
-    bottom: 0px;
-    background: rgba(0, 0, 0, .9);
-    height: 70px;
+    top: 0px;
     width: 100%;
     z-index: 999;
 }
 
-header img {
-    margin-top: 12px;
+
+#header-pre.active {
+	background: url(../images/nav-bg.png);
+    padding: 5px 0;
+    height: 50px;
+    -webkit-box-shadow: 0 2px 5px rgba(35,31,32,.75);
+	-moz-box-shadow: 0 2px 5px rgba(35,31,32,.75);
+	box-shadow: 0 2px 5px rgba(35,31,32,.75);
+}
+
+#header-pre.active #billy-menu {
+    margin-top: 0px;
+    -webkit-border-radius: 0;
+	-moz-border-radius: 0;
+	border-radius: 0;
+    -webkit-box-shadow: none;
+	-moz-box-shadow: none;
+	box-shadow: none;
+}
+
+#billy-menu img {
+    display: none;
+}
+
+#billy-menu {
+    width: 50px;
+	height: 50px;
+	-webkit-border-radius: 25px;
+	-moz-border-radius: 25px;
+	border-radius: 25px;
+	background: url(../images/nav-bg.png);
+	-webkit-box-shadow: 2px 3px 7px rgba(35,31,32,.75);
+	-moz-box-shadow: 2px 3px 7px rgba(35,31,32,.75);
+	box-shadow: 2px 3px 7px rgba(35,31,32,.75);
+    position: relative;
+    float: right;
+    margin-top: 5px;
+    z-index: 999;
+    overflow: hidden;
+}
+
+#billy-menu .dots {
+    background: url(../images/menu-dots.png) no-repeat;
+    width: 8px;
+    height: 21px;
+    position: absolute;
+    right: 22px;
+    top: 14px;
+}
+
+.billy-menu-hover .dots {
+    background-position: 0px -21px !important;
+}
+
+#billy-menu img, #billy-menu nav {
+    visibility: hidden;
+}
+
+.billy-menu-hover img {
+    margin-left: 23px;
+    margin-top: 11px;
+    visibility: visible !important;
+}
+
+.billy-menu-hover nav {
+    visibility: visible !important;
+    margin-right: 68px;
+}
+
+.billy-menu-hover nav ul li {
+    line-height: 50px;
+}
+
+.nav-starter {
+    width: 103px;
+    height: 52px;
+    text-indent: -9999px;
+    background: url(../images/nav-starter.png);
+    position: absolute;
+    bottom: 0px;
+    right: 50%;
+    margin-right: -51px;
+    opacity: .85;
 }
 
 nav {
     float: right !important;
     position: relative;
-    right: -2000px;
 }
 
 nav ul {
@@ -78,37 +169,29 @@ nav ul {
     margin: 0px;
 }
 
-nav ul li a {
-    text-align: center;
-    display: block;
-    width: 100%;
+nav ul li {
+    float: left;
+    padding-left: 60px;
     height: 100%;
     line-height: 70px;
+}
+
+nav ul li a {
     text-decoration: none;
-    color: #fff;
+    color: #ccccff;
 }
 
 nav ul li a:hover {
-    background-color: #996633;
+    color: #fff;
 }
 
 nav .active {
-    background-color: #40807c !important;
+    color: #fff !important;
 }
 
 
-header .nav-starter {
-    width: 71px;
-    height: 70px;
-    text-indent: -9999px;
-    background: url(../images/nav-starter.png);
-    float: right;
-    position: absolute;
-    right: 0;
-}
-
-header .nav-starter:hover {
-    background-position: 0px 70px;
+.nav-starter:hover {
+    opacity: 1;
 }
 
 #content {
@@ -118,22 +201,26 @@ header .nav-starter:hover {
     z-index: 2;
 }
 
-#who-are-we {
-    background: url(../images/border-1.png) repeat-x left bottom #fff;
+#whats-our-story {
+    padding: 65px 0;
+    background: url(../images/who-are-we.png);
 }
 
-#who-are-we h1 {
+#whats-our-story h1 {
     font-size: 3em;
     color: #003366;
-    margin: 55px 0 13px 0;
+    margin-top: 92px;
+    margin-bottom: 43px;
 }
 
-#who-are-we p {
-    font-size: 1.125em;
+#whats-our-story p {
+    font-size: .9375em;
     color: #333;
+    line-height: 22px;
+    margin: 0 0 10px 0;
 }
 
-#who-are-we .special {
+#whats-our-story .special {
     color: #f99532;
 }
 
@@ -141,14 +228,26 @@ header .nav-starter:hover {
     font-style: italic;
 }
 
-.our-work {
-    margin-top: 70px;
-}
-
 .our-work img {
-    border: 2px solid #000066;
     box-sizing: border-box;
     -moz-box-sizing: border-box;
+    opacity: .7;
+    width: 100%;
+    height: 100%;
+}
+
+
+.our-work div.four {
+    width: 230px !important;
+    height: 196px;
+    margin: 0 !important;
+    position: relative;
+}
+
+.our-work div.eight {
+    margin: 0 !important;
+    height: 163px;
+    position: relative;
 }
 
 .our-work p {
@@ -160,9 +259,97 @@ header .nav-starter:hover {
     font-size: 1.5em !important;
 }
 
+.image-bg {
+    position: absolute;
+    background: rgba(51, 153, 103, .95);
+	-webkit-box-shadow: inset 0 0 2px rgba(255,255,255,.75);
+	-moz-box-shadow: inset 0 0 2px rgba(255,255,255,.75);
+	box-shadow: inset 0 0 2px rgba(255,255,255,.75);
+    color: #fff;
+    z-index: 10;
+}
+
+.image-bg div {
+    position: absolute;
+    right: 0px;
+    bottom: 0px;
+    margin: 10px;
+    color: #fff;
+    text-align: right;
+}
+
+.image-title {
+    font-size: 0.9375em;
+    font-weight: bold;
+    display: block;
+}
+
+.image-work {
+    font-size: .75em;
+    font-style: italic;
+}
+
+#quote {
+    height: 350px;
+    background: url(../images/billboard-2.jpg) center top;
+    background-attachment: fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    -webkit-box-shadow: inset 0 -1px 20px rgba(0,0,0,.75);
+	-moz-box-shadow: inset 0 -1px 20px rgba(0,0,0,.75);
+	box-shadow: inset 0 -1px 20px rgba(0,0,0,.75);
+}
+
+#quote figure {
+    background: rgba(0, 102, 153, .85);
+    height: 180px;
+    margin-top: 85px;
+}
+
+#quote .h1-wrap {
+    height: 180px;
+    display: table;
+    margin-left: 20px;
+}
+
+#quote h1 {
+    font-size: 1.875em;
+    color: #fff;
+    font-style: italic;
+    display: table-cell; 
+    vertical-align: middle;
+}
+
+#quote blockquote {
+    width: 360px;
+    font-size: 1.125em;
+    color: #fff;
+    font-weight: normal;
+    margin: 0;
+    height: 100%;
+    display: table;
+}
+
+#quote blockquote p {
+    margin: 0;
+    display: table-cell;
+    vertical-align: middle;
+}
+
+#quote .caption {
+    color: #ccccff;
+    font-style: italic;
+    text-align: right;
+    font-size: 1.111em;
+    margin-left: 23px;
+}
+
 #the-team {
     box-shadow: inset 0 5px 20px rgba(35,31,32,.5);
     background: url(../images/the-team-bg.png);
+    display: none;
 }
 
 #the-team h1 {
@@ -193,41 +380,6 @@ header .nav-starter:hover {
     -webkit-box-shadow: 0 0 10px rgba(102,102,51,.15);
 	-moz-box-shadow: 0 0 10px rgba(102,102,51,.15);
 	box-shadow: 0 0 10px rgba(102,102,51,.15);
-}
-
-#quote {
-    height: 350px;
-    background: url(../images/billboard-2.jpg) center top;
-    background-attachment: fixed;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-}
-
-
-#quote figure {
-    background: rgba(10, 98, 141, .8);
-    height: 60px;
-    padding: 30px 0px;
-    text-align: center;
-    margin-top: 115px;
-    margin-left: 60px;
-}
-
-#quote blockquote {
-    font-size: 1.5em;
-    color: #fff;
-    font-weight: normal;
-    margin: 0 0 10px 0;
-}
-
-#quote figcaption {
-    font-size: 1.5em;
-    color: #99cccc;
-    font-style: italic;
-    text-align: right;
-    margin-right: 50px;
 }
 
 #what-can-we-do {
@@ -301,8 +453,9 @@ header .nav-starter:hover {
 
 #endless-possibilities {
     height: 191px;
-    background: url(../images/endless-possibilities-2.png) center center no-repeat #fff;
-    background-attachment: fixed;
+    /*background: url(../images/endless-possibilities-2.png) center center no-repeat #fff;
+    background-attachment: fixed;*/
+    background: url(../images/who-are-we.png);
 }
 
 #endless-possibilities .parallax {
@@ -325,33 +478,159 @@ header .nav-starter:hover {
     color: #666;
 }
 
-footer {
-    background: url(../images/footer-bg.png);
+#twitter {
+    background: url(../images/twitter-bg.jpg) no-repeat center center;
+    background-attachment: fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    height: 350px;
+    -webkit-box-shadow: inset 0 3px 10px rgba(35,31,32,.35);
+	-moz-box-shadow: inset 0 3px 10px rgba(35,31,32,.35);
+	box-shadow: inset 0 3px 10px rgba(35,31,32,.35);
 }
 
-#footer .container {
-    padding-top: 40px;
+.twitter-box {
+    margin-top: 85px;
+    width: 100%;
+    height: 160px;
+    padding: 10px 0;
+    background: rgba(255, 255, 255, .7);
 }
 
-footer h1 {
+.twitter-box h1 {
+    margin: 0;
+    line-height: 160px;
     font-size: 1.875em;
+    color: #333;
+}
+
+#twitter-icon {
+    margin-left: 17px;
+    margin-right: 10px;
+}
+
+.tweet {
+    display: table !important;
+    height: 100%;
+    margin-left: 0px !important;
+    padding-left: 9px;
+    border-left: 1px solid #fff;
+}
+
+.twitter-box p {
+    font-size: 1.5em;
+    color: #666;
+    margin: 0;
+    margin-left: 17px;
+    display: table-cell;
+    vertical-align: middle;
+}
+
+#blog {
+    background: url(../images/blog-bg.jpg) no-repeat center center;
+    background-attachment: fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    height: 350px;
+	-webkit-box-shadow: inset 0 5px 20px rgba(35,31,32,.5);
+	-moz-box-shadow: inset 0 5px 20px rgba(35,31,32,.5);
+	box-shadow: inset 0 5px 20px rgba(35,31,32,.5);
+}
+
+.blog-box {
+    margin-top: 85px;
+    width: 100%;
+    height: 180px;
+    background: rgba(0, 0, 0, .85);
     color: #fff;
+}
+
+.blog-box div {
+    display: table !important;
+    height: 100%;
+}
+
+.blog-box h1 {
+    font-size: 2em;
+    margin: 0;
+    padding-left: 17px;
+    padding-right: 10px;
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.blog-box p {
+    margin: 0;
+    font-size: 0.9375em;
+    display: table-cell;
+    vertical-align: middle;
+    line-height: 25px;
+    padding-right: 17px;
+}
+
+.blog-box .read-more {
+    color: #ccccff;
+    font-style: italic;
+    float: right;
+    text-decoration: none;
+}
+
+footer {
+    background: url(../images/blue-bg.png);
+    -webkit-box-shadow: inset 0 5px 20px rgba(35,31,32,.5);
+	-moz-box-shadow: inset 0 5px 20px rgba(35,31,32,.5);
+	box-shadow: inset 0 5px 20px rgba(35,31,32,.5);
+}
+
+footer .container {
+    padding-top: 70px;
+}
+
+#location h1 {
+    font-size: 3em;
+    color: #fff;
+    margin: 0;
+    padding: 50px 0;
+}
+
+#location p {
     clear: both;
+    color: #fff;
+    line-height: 30px;
+    margin: 0;
+}
+
+form {
+    width: 100%;
+    background: rgba(0, 0, 51, .5);
+}
+
+form div {
+    padding: 40px 30px 55px 30px;
+}
+
+#contact h1 {
+    color: #fff;
+    margin: 0;
 }
 
 #contact p {
-    color: #ccffcc;
-    font-size: 1.125em;
-    margin: 12px 0;
+    color: #fff;
+    margin: 0;
+    padding-top: 10px;
+    padding-bottom: 30px;
 }
 
 #contact input, #contact textarea {
-    box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    border: 1px solid #66cc99;
-    background: #b8e8d0;
-    height: 52px;
-    color: #999;
+    width: 379px;
+    border: 1px solid #488f7b;
+    background: #b3b3c2;
+    height: 50px;
+    color: #666699;
     font-size: 1.125em;
     padding-left: 20px;
     margin-bottom: 10px;
@@ -363,91 +642,52 @@ footer h1 {
 #contact input:focus, #contact textarea:focus {
     border: 1px solid #006633;
     background: #fff;
-    color: #ccc;
+    color: #6666ff;
 }
 
 #contact textarea {
-    margin-bottom: 18px !important;
-    height: 142px;
+    margin-bottom: 34px !important;
+    height: 122px;
     padding-top: 18px;
     resize: vertical;
 }
 
 #contact button {
-    height: 50px;
+    width: 120px;
+    height: 43px;
     border: 0;
-    background: #fb9732;
+    background: #ff9900;
     color: #fff;
     font-size: 1.125em;
     outline: 0;
+    border-top: 2px solid #ffcc99;
+    opacity: .8;
+    -webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
 }
 
 #contact button:hover {
     border-top: 1px solid #ffcc99;
-}
-
-#contact button:hover span {
-    position: relative;
-    top: -1px;
     opacity: 1;
 }
 
-#contact button span {
-    opacity: .6;
+#contact span.drop {
+    font-size: 0.9375em;
+    color: #fff;
+    float: right;
+    text-align: left;
+    width: 250px;
+    height: 45px;
+    margin-top: 1px;
 }
 
-footer article h1 {
-    color: #ccffcc;
+#contact .email-address {
     font-size: 1.375em;
 }
 
-footer article p {
-    font-size: .875em;
-    color: #fff;
-    line-height: 25px;
-}
-
-footer article p a {
-    color: #ccffcc;
-    font-style: italic;
-    text-decoration: none;
-}
-
-footer .after-article {
-    height: 1px;
-    background: #b8e8d0;
-    opacity: .4;
-    margin: 25px 0;
-}
-
-footer .tweet {
-    color: #ccffcc;
-    font-size: .875em;
-}
-
-footer .tweet .mention, footer .where-we-are {
-    color: #fff;
-}
-
-.footer-icon {
-    position: relative;
-    left: 8px;
-}
-
-#location-icon {
-    top: 6px;
-}
-
-#twitter-icon {
-    top: 3px;
-}
-
-#blog-icon {
-    top: 8px;
-}
-
 #copyright {
-    color: #ccffcc;
+    color: #ccccff;
     font-size: .875em;
     margin-top: 50px;
     padding-bottom: 60px;
@@ -468,10 +708,10 @@ h1, h2, h3 {
     float: right;
 }
 
-::-webkit-input-placeholder { font-style: italic; }
-::-moz-placeholder { font-style: italic; } /* firefox 19+ */
-:-ms-input-placeholder { font-style: italic; } /* ie */
-input:-moz-placeholder { font-style: italic; }
+::-webkit-input-placeholder { font-style: italic; color: #666699;}
+::-moz-placeholder { font-style: italic; color: #666699;} /* firefox 19+ */
+:-ms-input-placeholder { font-style: italic; color: #666699;} /* ie */
+input:-moz-placeholder { font-style: italic; color: #666699;}
 
 /* #Media Queries
 ================================================== */
@@ -525,21 +765,40 @@ input:-moz-placeholder { font-style: italic; }
             font-size: 3em;
         }
     
-        nav {
-            width: 300px !important;
+        #billy-menu {
+            font-size: .875em;
         }
     
         nav ul li {
-            width: 100px !important;
+            padding-left: 40px;
         }
     
-    
-        .our-work div img {
-            width: 180px;
+        #whats-our-story h1 {
+            font-size: 2.5em;
+            margin-top: 0;
         }
     
-        #quote figcaption, #quote blockquote {
-            font-size: 1.3em;
+        .our-work div.four {
+            width: 182px !important;
+            height: 155px;
+        }
+
+        .our-work div.eight {
+            height: 129px;
+        }
+    
+        #quote blockquote {
+            width: 278px;
+        }
+    
+        #quote .caption {
+            text-align: right;
+            width: 100%;
+            float: right;
+        }
+    
+        .twitter-box h1 {
+            font-size: 1.4em;
         }
     
         footer h1 {
@@ -594,12 +853,44 @@ input:-moz-placeholder { font-style: italic; }
     
         #endless-possibilities .second-parallax {
             background-image: url(../images/endless-possibilities-3-tablet-portrait.png);
+            margin-left: 0;
         }
     
         #endless-possibilities span {
             margin-left: -52px;
         }
-
+        
+        .blog-box h1 {
+            font-size: 1.65em;
+        }
+    
+        .blog-box p {
+            font-size: .75em;
+            line-height: 20px;
+        }
+        
+        #location h1 {
+            padding-top: 0px;
+        }
+    
+        #contact input, #contact textarea {
+            width: 286px;
+        }
+    
+        #contact span.drop {
+            width: 175px;
+            margin-left: 5px;
+            font-size: 0.75em;
+            margin-top: 12px;
+        } 
+    
+    #some-of-our-work .container {
+        background: url(../images/hack-ipad.png) no-repeat center 58px;
+    }
+    
+        footer .container{
+            overflow: hidden;
+    }
 	/* All Mobile Sizes (devices and browser) */
 	@media only screen and (max-width: 767px) {}
 

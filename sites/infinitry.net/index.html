@@ -34,42 +34,59 @@
     <script src="js/global.js"></script>
 </head>
 <body>
+    <header id="header-pre">
+        <div class="container">
+            <div id="billy-menu">
+                <img src="images/billy-logo.png" alt="infinitry">
+                <nav>
+                    <ul>
+                        <li><a href="?state=whats-our-story">What's our story?</a></li>
+                        <li><a href="?state=who-are-we">Who are we?</a></li>
+                        <li><a href="?state=what-can-we-do">What can we do?</a></li>
+                        <li><a href="?state=where-are-we">Where are we?</a></li>
+                    </ul>
+                </nav>
+                <div class="dots"></div>
+            </div>
+        </div>
+    </header>
     <section id="billboard-text">
         <span>Let's work together</span><br>
         <span>to make your website</span><br>
         <span><b class="special">beautiful</b> and <b class="special">functional</b>.</span>
     </section>
-    <div id="billboard"></div>
-    <header>        
-        <div class="container">
-            <div class="three columns"><img src="images/logo.png" alt="infinitry"></div>
-            <nav class="six columns omega">
-                <ul>
-                    <li class="alpha omega two columns"><a class="active" href="?state=who-are-we">About</a></li>
-                    <li class="alpha omega two columns"><a href="?state=what-can-we-do">Services</a></li>
-                    <li class="alpha omega two columns"><a href="?state=footer">Contact</a></li>
-                </ul>
-            </nav>
-            <a href="#" class="nav-starter">View Site</a>
-        </div>
-    </header>
+    <div id="billboard">
+        <a href="#" class="nav-starter">View Site</a>
+    </div>
     <div id="content">
-        <section id="who-are-we" data-statetitle="Infinitry: Who We Are">
+        <section id="whats-our-story" data-statetitle="Infinitry: What's our story?">
             <div class="container">
                 <div class="eight columns">
-                    <h1>Who are we?</h1>
-                    <p>A hip, upstart design firm with <span class="special">infinite</span> possibilities. Infinitry began as two kids in middle school messing around with web design. Those two kids, Tommy Graves and Brandon Carroll, had no idea what they were getting themselves into.</p>
+                    <h1>What's our story?</h1>
+                    <p>We're a hip, upstart design firm with <span class="special">infinite</span> possibilities. Infinitry began as two kids in middle school messing around with web design. Those two kids, Tommy Graves and Brandon Carroll, had no idea what they were getting themselves into.</p>
                     <p>After entering high school, they made their first attempt to start a web business, called Generation Studio. They made a website, distributed business cards, and tried to get the word out. But aside from a few small jobs from friends and family, they really didn't get enough business to sustain Generation Studio. That's when they decided to take things in a new direction.</p>
                     <p>They -- we -- decided to start researching. We looked at what worked for other people. We looked at what didn't. We found small people with big ideas and incorporated those into our business model. And we learned more than we ever imagined we would. Today, we are Infinitry.</p>
                     <p class="here-for-you">Today, we are here for you.</p>
                 </div>
-                <div class="our-work alpha eight columns">
-                    <img class="eight columns" src="images/1800listing.jpg" alt="We designed a website for 1-800-Listing">
-                    <p class="eight columns">We want your company to be successful and memorable, and we’ll work with you to make sure it happens.</p>
-                    <div class="eight columns">
-                        <img src="images/compendium1.png" alt="We developed an educational suite">
-                        <img class="right" src="images/compendium2.png" alt="The educational suite had mobile support.">
-                    </div>
+                <div class="our-work eight columns">
+                    <div class="eight columns"><img src="images/montage/1800listing.jpg" alt="1800 Listing; Web Design"></div>
+                    <div class="four columns"><img src="images/montage/cool-girl.jpg" alt="Cool girl; Photography"></div>
+                    <div class="four columns"><img src="images/montage/mycompendium-2.jpg" alt="MyCompendium; Web Design/UX"></div>
+                    <div class="four columns"><img src="images/montage/mycompendium-1.jpg" alt="MyCompendium; Web Design/UX"></div>
+                    <div class="four columns"><img src="images/montage/couple-photo.jpg" alt="Romantic couple; Photography"></div>
+                    <div class="eight columns"><img src="images/montage/city-night.jpg" alt="Bridge; Engineering"></div>
+                </div>
+            </div>
+        </section>
+        <section id="quote">
+            <div class="container">
+                <div class="twelve columns offset-by-two">
+                    <figure class="twelve columns">
+                        <div class="h1-wrap four columns offset-by-one">
+                            <h1>Insight &amp; inspiration</h1>
+                        </div>
+                        <blockquote class="six columns omega"><p>&ldquo;People ignore designs that ignore them. Plain and simple.&rdquo; <span class="caption">- Brandon Carroll</span></p></blockquote>
+                    </figure>
                 </div>
             </div>
         </section>
@@ -101,14 +118,6 @@
                         </div>
                     </section>
                 </div>
-            </div>
-        </section>
-        <section id="quote">
-            <div class="container">
-                <figure class="fourteen columns offset-by-one">
-                    <blockquote>&ldquo;People ignore designs that ignore them. Plain and simple.&rdquo;</blockquote>
-                    <figcaption>- Brandon Carroll</figcaption>
-                </figure>
             </div>
         </section>
         <section id="what-can-we-do" data-statetitle="Infinitry: What We Can Do">
@@ -143,40 +152,57 @@
                 </div>
             </div>
         </section>
-        <footer id="footer" data-statetitle="Infinitry: Contact Us">
+        <section id="twitter">
             <div class="container">
-                <div id="contact" class="five columns">
-                    <h1>Get in touch <img class="footer-icon" src="images/mail-icon.png" alt="contact"></h1>
-                    <p>Think we can help you?</p>
-                    <p>Just want to say hello?</p>
-                    <form>
-                        <input class="alpha five columns" type="text" name="name" placeholder="What's your name?">
-                        <input class="alpha five columns" type="text" name="phone" placeholder="How about your number?">
-                        <input class="alpha five columns" type="text" name="email" placeholder="And your email?">
-                        <textarea class="alpha five columns" name="message" placeholder="Now tell us your story"></textarea>
-                        <button class="alpha three columns"><span>Send it!</span></button>
-                    </form>
+                <div class="twelve columns offset-by-two">
+                    <div class="twitter-box">
+                        <div class="five columns alpha">
+                            <h1><img class="footer-icon" id="twitter-icon" src="images/twitter-icon.png" alt="twitter">@InfinitryWeb</h1>
+                        </div>
+                        <div class="tweet seven columns omega">
+                            <p>&ldquo;Some tweet goes here. Woo!&rdquo;</p>
+                        </div>
+                    </div>
                 </div>
-                <div class="eleven columns">
-                    <div class="alpha six columns">
-                        <h1>Where we are <img class="footer-icon" id="location-icon" src="images/location-icon.png" alt="location"></h1>
-                        <p class="where-we-are">We are located in the Central Ohio and Southeastern Ohio areas. We have lived here most of our lives, and we love helping businesses and individuals close to home.</p>
-                        <p class="where-we-are">If you or your business is located in this area, please feel free to contact us and set up an appointment so we can get you started as soon as possible... We can’t wait to hear from you!</p>
+            </div>
+        </section>
+        <section id="some-of-our-work">
+            <div class="container"></div>
+        </section>
+        <section id="blog">
+            <div class="container">
+                <div class="twelve columns offset-by-two">
+                    <div class="blog-box">
+                        <div class="four columns alpha">
+                            <h1>Fresh off our presses</h1>
+                        </div>
+                        <div class="eight columns omega">
+                            <p>Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit. Nam nec tellus a odi... <a class="read-more" href="#">(Read the rest)</a></p>
+                        </div>
                     </div>
-                    <div class="omega five columns">
-                        <h1>Recent tweets <img class="footer-icon" id="twitter-icon" src="images/twitter-icon.png" alt="twitter"></h1>
-                        <p class="tweet">This is a random tweet</p>
-                        <p class="tweet">This is another random tweet, except it's longer and it has a <span class="mention">@mention</span></p>
-                        <p class="tweet">This is another random tweet, except it's longer and it has no mention</p>
-                        <p class="tweet">This is another random tweet, except it's longer and it has no mention</p>
                     </div>
-                    <div class="after-article alpha omega eleven columns"></div>
-
-                    <h1>Hot off the press <img class="footer-icon" id="blog-icon" src="images/blog-icon.png" alt="blog"></h1>
-                    <article>
-                        <h1>Random blog title</h1>
-                        <p>Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit. Nam nec tellus a odi... <a class="read-more" href="#">(Read More)</a></p>
-                    </article>            
+                </div>
+        </section>
+        <footer id="where-are-we" data-statetitle="Infinitry: Contact Us">
+            <div class="container">
+                <div id="location" class="seven columns">
+                    <h1 class="six columns alpha">We are located in the Central Ohio and Southwestern Ohio areas.</h1>
+                    <p>We have lived here most of our lives, and we love helping businesses and individuals close to home. If you or your business is located in this area, please feel free to contact us and set up an appointment so we can get you started as soon as possible... We can’t wait to hear from you!</p>
+                </div>
+                <div id="contact" class="eight columns offset-by-one">
+                    <form>
+                        <div>
+                            <h1>Get in touch</h1>
+                            <p>Think we can help you? Just want to say hello?</p>
+                            <input type="text" name="name" placeholder="What's your name?">
+                            <input type="text" name="phone" placeholder="How about your number?">
+                            <input type="text" name="email" placeholder="And your email?">
+                            <textarea name="message" placeholder="Now tell us your story"></textarea>
+                            <button><span>Send it!</span></button>
+                            <span class="drop">Or drop us a line at...
+                            <span class="email-address">theoracle@infinitry.net</span></span>
+                        </div>
+                    </form>
                 </div>
                 <div class="sixteen columns" id="copyright">
                     <span>&copy; 2013 Infinitry. We do all our own designs.</span>
