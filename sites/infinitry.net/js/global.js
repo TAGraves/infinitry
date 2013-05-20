@@ -4,31 +4,25 @@
     //Close billy and open content
     var start = function (fn) {
         var windowHeight = $(window).height(),
-            content = $('#content'),
-            contentTop = content.position().top,
             fnSet = (typeof fn !== "undefined");
         
-        $('#billy-menu').unbind('touchstart').off('mouseenter mouseleave').unbind('click');
-        
-        content.css({
-            top: 'auto', //fix Firefox whitespace bug
-            marginTop: contentTop
-        }); 
-        
-        $('html').removeClass('noscroll'); //allow scrolling
-        
-        $('#billboard-text').animate({top: -342}, 750); //slide billboard text out
-        
-        $('#billy-menu').addClass('billy-menu-hover').stop().animate({width: ($(window).width() > 960) ? 930 : 768}, 500, function () {
-            $('#header-pre').addClass('active');
-        });
-        content.animate({marginTop: -181}, 750, function () { //slide content in
+        $('#menu').unbind('touchstart').off('mouseenter mouseleave').unbind('click');
+                
+        $('#billboard-text').stop().animate({marginTop: -windowHeight}, 750, function () {
+            $('#top-menu-hack').addClass('no-longer-necessary');
+            $('html').removeClass('noscroll');
+            $('header').addClass('active');
+            openMenu();
+            $('header img').fadeIn(500);
             if (fnSet) {
                 fn(); //run callback once content is visible
             } else {
                 History.pushState({state: 'whats-our-story'}, 'Infinitry: What\'s our story?', '?state=whats-our-story');
             }
-        }); //slide content in
+            $('#billboard').data('router', true);        
+        }); //slide billboard text out
+        
+        //});
         
     };
     
@@ -36,46 +30,63 @@
     var restart = function () {
         var windowHeight = $(window).height();
         
-        $('#content').stop().animate({top: '100%'}, 750); //slide content out
-        
-        $('#header-pre').removeClass('active');
-        $('#billy-menu').removeClass('billy-menu-hover').stop().animate({width: 50}, 500);
-        
-        $('#billy-menu').hover(function () {
-            //hover in
-            var $this = $(this);
-            var width = ($(window).width() > 960) ? 930 : 768;
-            $this.addClass('billy-menu-hover').stop().animate({width: width}, 500);
-            
-        }, function () {
-            //hover out
-            var $this = $(this);
-            $this.removeClass('billy-menu-hover').stop().animate({width: 50}, 200);
-        }).bind('touchstart', function () {
+        $('#billboard').data('router', false);        
+        $('header img').fadeOut(200);
+        closeMenu();
+        $('header').removeClass('active');
+        $('html').addClass('noscroll');
+        $('#top-menu-hack').removeClass('no-longer-necessary');
+        $('#billboard-text').stop().animate({marginTop: 0}, 750);
+        $('#menu').hover(function () {
+            openMenu();
+            $(this).bind('touchstart', function () {
                 var $this = $(this);
                 $this.unbind('touchstart').off('mouseenter mouseleave').toggleClick(function () {
-                    $this.addClass('billy-menu-hover').stop().animate({width: ($(window).width() > 960) ? 930 : 768}, 500);
+                    openMenu();
                 }, function () {
-                    $this.removeClass('billy-menu-hover').stop().animate({width: 50}, 200);
+                    closeMenu();
                 }).trigger('click');
-            });;
-        
-        $('#billboard-text').animate({top: '50%'}, 750); //slide billboard text in
-        
-        $('html').addClass('noscroll'); //disable scrolling
+            });
+        }, function () {
+            closeMenu();
+        });
+                
     };
 
+    var openMenu = function (fn) {
+        var width = ($(window).width() > 959) ? 768 : 660;
+        if (typeof fn === "undefined") {
+            fn = function () {};
+        }
+        $('#menu').addClass('menu-hover').stop().animate({width: width}, 500, fn);
+    };
+    
+    var closeMenu = function () {
+        $('#menu').stop().animate({width: 50}, 200, function () {
+            $(this).removeClass('menu-hover');
+        });
+    };
+        
     var route = function (state) { //scrolls to the state's section
         var scrollTo = $('#' + state).position().top; //get location of the section
-        $('html, body').stop().animate({scrollTop: scrollTo-70}, 500); //scroll there, leave room for the menu
-    }
+        if (!$('#billboard').data('router')) {
+        } else {
+            $('#billboard').css('visibility','hidden');
+            $('#content').fadeTo(100, 0, function () {
+                $(window).scrollTop(scrollTo-60); //scroll there, leave room for the menu
+                $('#content').fadeTo(100, 100, function () {
+                    $('#billboard').css('visibility','visible');
+                });
+            });
+        }
+    };
         
     $(window).bind('statechange', function () { //when state is changed
         var State = History.getState(); 
         if (State.data.state === "splash" || typeof State.data.state === "undefined") { //if we're moving to the splash page
             restart(); //in case we hit the back button. no consequences for first load
         } else { //non-splash page
-            if (!$('#header-pre').hasClass('active')) { //splash screen is showing (e.g. we refreshed)
+            if (!$('header').hasClass('active')) { //splash screen is showing (e.g. we refreshed)
                 start(function () { //get rid of the splash page
                     route(State.data.state); //move to the right section
                 });
@@ -87,36 +98,25 @@
     
     $(function () {
 
-        $('#billy-menu').hover(function () {
-            //hover in
-            var $this = $(this);
-            var width = ($(window).width() > 960) ? 930 : 768;
-            $this.addClass('billy-menu-hover').stop().animate({width: width}, {
-                duration: 500,
-                step: function (num) {
-                    /*if (num > 200) {
-                        $('#billy-menu img').show();
-                    }*/
-                }
-            });
-            
+        $('#menu').hover(function () {
+            openMenu();
             $(this).bind('touchstart', function () {
                 var $this = $(this);
                 $this.unbind('touchstart').off('mouseenter mouseleave').toggleClick(function () {
-                    $this.addClass('billy-menu-hover').stop().animate({width: ($(window).width() > 960) ? 930 : 768}, 500);
+                    openMenu();
                 }, function () {
-                    $this.removeClass('billy-menu-hover').stop().animate({width: 50}, 200);
+                    closeMenu();
                 }).trigger('click');
             });
         }, function () {
-            //hover out
-            var $this = $(this);
-            $this.removeClass('billy-menu-hover').stop().animate({width: 50}, 200);
+            closeMenu();
         });
         
         //route to the current section
         var state = History.getState().data.state;
         if (typeof state !== "undefined" && state !== "splash") { //not splash page
+            
+            $('#billboard').data('router', true);    
             start(function () {
                 route(state);
             });
@@ -128,10 +128,31 @@
             e.preventDefault(); //stop from loading hashtag page
             var state = $(this).attr('href').split('?state=')[1], //state in href
                 title = $('#' + state).data('statetitle'); //menu sections have this data attr
-            if (state === History.getState().data.state) {
-                route(state); //scroll to top of already selected section
-            } else {
+            
+            if (!$('#billboard').data('router')) {
+                //billy menu click
+                var windowHeight = $(window).height(),
+                    scrollTo = $('#' + state).position().top; //get location of the section
+
+                $('#top-menu-hack').addClass('no-longer-necessary');
+                $('#menu').unbind('touchstart').off('mouseenter mouseleave').unbind('click');
+                $('html').removeClass('noscroll');
+                $('header').addClass('active');
+                $('#content, #billboard, #billboard-text').fadeTo(100, 0, function () {
+                    $('#billboard-text').stop().css('marginTop', -windowHeight);
+                    $(window).scrollTop(scrollTo-60); //scroll there, leave room for the menu
+                    $('#content, #billboard, #billboard-text').fadeTo(100, 100);
+                });
+                openMenu();
+                $('header img').fadeIn(500);
                 History.pushState({state: state}, title, '?state=' + state);
+                $('#billboard').data('router', true); 
+            } else {
+                if (state === History.getState().data.state) {
+                    route(state); //scroll to top of already selected section
+                } else {
+                    History.pushState({state: state}, title, '?state=' + state);
+                }
             }
         });
 
@@ -140,11 +161,12 @@
             var sectionInView = $('.container:in-viewport').parent('[data-statetitle]'), //only menu items
                 title = sectionInView.data('statetitle'),
                 state = sectionInView.attr('id');
-            
-            if (typeof title !== "undefined") { //just in case something else got selected somehow; probably unnecessary
+                
                 $('nav a.active').removeClass('active');
+
+            if (typeof title !== "undefined") { //just in case something else got selected somehow; probably unnecessary
                 $('nav a[href="?state=' + state + '"]').addClass('active');
-            }
+            } 
             
         });
         
@@ -205,8 +227,10 @@
         
         //Stretch footer to 100% height
         $(window).resize(function () {
-            $('.billy-menu-hover').width(($(window).width() > 960) ? 930 : 768);
             var windowHeight = $(window).height();
+            if ($('header').hasClass('active')) {
+                $('#billboard-text').css('marginTop', -windowHeight);
+            }
             $('footer .container').css('minHeight', windowHeight - 132); //not sure why, but it's always 52px too tall - and take off 70 more for padding
 
         }).trigger('resize'); //stretch footer on page load

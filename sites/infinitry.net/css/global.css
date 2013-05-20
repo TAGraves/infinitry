@@ -40,7 +40,7 @@ html.noscroll {
     background-size: cover;
 }
 
-#billboard-text {
+/*#billboard-text {
     position: relative;
     height: 342px;
     width: 940px;
@@ -49,9 +49,36 @@ html.noscroll {
     left: 50%;
     margin-left: -470px;
     z-index: 1;
+}*/
+
+#billboard-text {
+    left: 50%;
+    margin-left: -470px;
+    height: 100%;
+    width: 940px;
+    display: table;
+    position: relative;
+    z-index: 1;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 
-#billboard-text span {
+#billboard-text div {
+    display: table-cell;
+    vertical-align: middle;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+#billboard-text p {
     margin: 0 0 7px 0;
     height: 107px;
     line-height: 107px;
@@ -59,7 +86,22 @@ html.noscroll {
     background: rgba(0, 102, 153, .8);
     color: #fff;
     font-size: 4.5em;
-    display: inline-block;
+    display: inline-block;    
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+#billboard-text span {
+    -webkit-touch-callout: text;
+    -webkit-user-select: text;
+    -khtml-user-select: text;
+    -moz-user-select: text;
+    -ms-user-select: text;
+    user-select: text; 
 }
 
 #billboard-text .special {
@@ -67,38 +109,64 @@ html.noscroll {
     font-weight: normal;
 }
 
-#header-pre {
+#billboard-text span::-moz-selection { 
+    background: rgba(0, 102, 153, 0); 
+    color: #cccc66;
+}
+
+#billboard-text span::selection {
+    background: rgba(0, 102, 153, 0);
+    color: #cccc66;
+}
+
+#billboard-text .special::-moz-selection { 
+    background: rgba(0, 102, 153, 0); 
+    color: #fff;
+}
+
+#billboard-text .special::selection {
+    background: rgba(0, 102, 153, 0);
+    color: #fff;
+}
+
+header {
     position: fixed;
     top: 0px;
     width: 100%;
     z-index: 999;
 }
 
-
-#header-pre.active {
+header.active {
 	background: url(../images/nav-bg.png);
-    padding: 5px 0;
-    height: 50px;
+    height: 60px;
     -webkit-box-shadow: 0 2px 5px rgba(35,31,32,.75);
 	-moz-box-shadow: 0 2px 5px rgba(35,31,32,.75);
 	box-shadow: 0 2px 5px rgba(35,31,32,.75);
 }
 
-#header-pre.active #billy-menu {
-    margin-top: 0px;
+header.active #menu {
     -webkit-border-radius: 0;
 	-moz-border-radius: 0;
 	border-radius: 0;
     -webkit-box-shadow: none;
 	-moz-box-shadow: none;
 	box-shadow: none;
+    overflow: visible;
 }
+/*
+header.active img {
+    left: -7px !important;
+}*/
 
-#billy-menu img {
+
+header img {
+    position: absolute;
+    top: 11px;
+    left: 23px;
     display: none;
 }
 
-#billy-menu {
+#menu {
     width: 50px;
 	height: 50px;
 	-webkit-border-radius: 25px;
@@ -109,41 +177,39 @@ html.noscroll {
 	-moz-box-shadow: 2px 3px 7px rgba(35,31,32,.75);
 	box-shadow: 2px 3px 7px rgba(35,31,32,.75);
     position: relative;
-    float: right;
     margin-top: 5px;
     z-index: 999;
     overflow: hidden;
+    float: right;
 }
 
-#billy-menu .dots {
+#menu .dots {
+    z-index: 1000;
+    width: 50px;
+	height: 50px;
+	-webkit-border-radius: 25px;
+	-moz-border-radius: 25px;
+	border-radius: 25px;
+	background: url(../images/nav-bg.png);
+    position: absolute;
+    right: 0px;
+    top: 0px;
+}
+
+#menu .dots div {
     background: url(../images/menu-dots.png) no-repeat;
     width: 8px;
     height: 21px;
     position: absolute;
-    right: 22px;
     top: 14px;
+    right: 22px;
 }
 
-.billy-menu-hover .dots {
+.menu-hover .dots div {
     background-position: 0px -21px !important;
 }
 
-#billy-menu img, #billy-menu nav {
-    visibility: hidden;
-}
-
-.billy-menu-hover img {
-    margin-left: 23px;
-    margin-top: 11px;
-    visibility: visible !important;
-}
-
-.billy-menu-hover nav {
-    visibility: visible !important;
-    margin-right: 68px;
-}
-
-.billy-menu-hover nav ul li {
+.menu-hover nav ul li {
     line-height: 50px;
 }
 
@@ -157,11 +223,15 @@ html.noscroll {
     right: 50%;
     margin-right: -51px;
     opacity: .85;
+    z-index: 2;
 }
 
 nav {
-    float: right !important;
-    position: relative;
+    float: left !important;
+    width: 720px;
+    position: absolute;
+    left: 0px;
+    top: 0px;
 }
 
 nav ul {
@@ -172,8 +242,8 @@ nav ul {
 nav ul li {
     float: left;
     padding-left: 60px;
-    height: 100%;
-    line-height: 70px;
+    height: 50px;
+    line-height: 50px;
 }
 
 nav ul li a {
@@ -189,16 +259,30 @@ nav .active {
     color: #fff !important;
 }
 
-
 .nav-starter:hover {
     opacity: 1;
 }
 
 #content {
-    padding-top: 70px;
     position: relative;
-    top: 100%;
-    z-index: 2;
+    z-index: 3;
+}
+
+#top-menu-hack {
+    width: 100%;
+    background: url(../images/nav-bg.png);
+    height: 60px;
+    -webkit-box-shadow: 0 2px 5px rgba(35,31,32,.75);
+	-moz-box-shadow: 0 2px 5px rgba(35,31,32,.75);
+	box-shadow: 0 2px 5px rgba(35,31,32,.75);
+    position: relative;
+}
+
+#top-menu-hack.no-longer-necessary {
+    background: transparent;
+    -webkit-box-shadow: 0 0 0;
+	-moz-box-shadow: 0 0 0;
+	box-shadow: 0 0 0;
 }
 
 #whats-our-story {
@@ -291,7 +375,7 @@ nav .active {
 
 #quote {
     height: 350px;
-    background: url(../images/billboard-2.jpg) center top;
+    background: url(../images/billboard-2.jpg) center center;
     background-attachment: fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -330,6 +414,10 @@ nav .active {
     margin: 0;
     height: 100%;
     display: table;
+    padding-left: 9px;
+    border-left: 1px solid #3399cc;
+    height: 155px;
+    margin-top: 13px;
 }
 
 #quote blockquote p {
@@ -453,8 +541,6 @@ nav .active {
 
 #endless-possibilities {
     height: 191px;
-    /*background: url(../images/endless-possibilities-2.png) center center no-repeat #fff;
-    background-attachment: fixed;*/
     background: url(../images/who-are-we.png);
 }
 
@@ -563,6 +649,14 @@ nav .active {
     vertical-align: middle;
 }
 
+.blog-box .post {
+    margin-top: 13px;
+    height: 155px;
+    margin-left: 0;
+    padding-left: 9px;
+    border-left: 1px solid #666;
+}
+
 .blog-box p {
     margin: 0;
     font-size: 0.9375em;
@@ -579,8 +673,13 @@ nav .active {
     text-decoration: none;
 }
 
+.blog-box .read-more:hover {
+    text-decoration: underline;
+}
+
 footer {
     background: url(../images/blue-bg.png);
+    background-attachment: fixed;
     -webkit-box-shadow: inset 0 5px 20px rgba(35,31,32,.5);
 	-moz-box-shadow: inset 0 5px 20px rgba(35,31,32,.5);
 	box-shadow: inset 0 5px 20px rgba(35,31,32,.5);
@@ -708,6 +807,8 @@ h1, h2, h3 {
     float: right;
 }
 
+
+
 ::-webkit-input-placeholder { font-style: italic; color: #666699;}
 ::-moz-placeholder { font-style: italic; color: #666699;} /* firefox 19+ */
 :-ms-input-placeholder { font-style: italic; color: #666699;} /* ie */
@@ -725,18 +826,25 @@ input:-moz-placeholder { font-style: italic; color: #666699;}
             background-image: url(../images/billboard-2-retina.jpg);
         }
     
-        #footer {
-            background: url(../images/footer-bg-retina.png);
-        }
-        
-        #what-can-we-do {
-            background: url(../images/what-can-we-do-bg-retina.png);
+        #twitter {
+            background-image: url(../images/twitter-bg-retina.jpg);
         }
     
+        /*#footer {
+            background: url(../images/footer-bg-retina.png);
+        }*/
+        
+        /*#what-can-we-do {
+            background: url(../images/what-can-we-do-bg-retina.png);
+        }*/
+    
         #the-team {
-            background: url(../images/the-team-bg-retina.png);
+            background-image: url(../images/the-team-bg-retina.png);
         }
-
+    
+        #blog {
+            background-image: url(../images/blog-bg-retina.jpg)
+        }
     }
 
 	/* Smaller than standard 960 (devices and browsers) */
@@ -752,6 +860,19 @@ input:-moz-placeholder { font-style: italic; color: #666699;}
             background-attachment: scroll;
             background-position: center -40px;
         }
+    
+        #twitter {
+            background-attachment: scroll;
+            -webkit-background-size: 1920px 1080px;
+        }
+    
+        #blog {
+            background-attachment: scroll;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;  
+        }
     }
 
 	/* Tablet Portrait size to standard 960 (devices and browsers) */
@@ -759,14 +880,20 @@ input:-moz-placeholder { font-style: italic; color: #666699;}
         #billboard-text {
             width: 768px;
             margin-left: -384px; /*Need to find out why numbers higher (e.g. -383) break portrait! */
+            padding-left: 10px;
         }
     
-        #billboard-text span {
+        .nav-starter {
+            margin-right: -41px;
+        }
+    
+        #billboard-text p {
             font-size: 3em;
         }
     
-        #billy-menu {
+        #menu {
             font-size: .875em;
+            margin-right: 10px;
         }
     
         nav ul li {
