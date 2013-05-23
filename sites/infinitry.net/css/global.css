@@ -51,11 +51,14 @@ html.noscroll {
     z-index: 1;
 }*/
 
+#mobile-billboard-text {
+    display: none;
+}
+
 #billboard-text {
     left: 50%;
     margin-left: -470px;
     height: 100%;
-    width: 940px;
     display: table;
     position: relative;
     z-index: 1;
@@ -76,6 +79,12 @@ html.noscroll {
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
+    text-align: center;
+}
+
+#billboard-text section {
+    display: inline-block;
+    text-align: left;
 }
 
 #billboard-text p {
@@ -257,6 +266,10 @@ nav ul li a:hover {
 
 nav .active {
     color: #fff !important;
+}
+
+nav .mobile {
+    display: none;
 }
 
 .nav-starter:hover {
@@ -725,6 +738,8 @@ form div {
 }
 
 #contact input, #contact textarea {
+    margin: 0;
+    padding: 0;
     width: 379px;
     border: 1px solid #488f7b;
     background: #b3b3c2;

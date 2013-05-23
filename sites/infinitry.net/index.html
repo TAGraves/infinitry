@@ -11,12 +11,15 @@
 
     <meta name="description" content="">
 	<meta name="author" content="">
- 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+ 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, height=device-height">
     
     <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Bitter:400,400italic">
     <link rel="stylesheet" href="css/base.css">
     <link rel="stylesheet" href="css/skeleton.css">
     <link rel="stylesheet" href="css/global.css">
+    <!--[if lte IE 7]><!-->
+        <link media="screen and (max-width: 767px)" rel="stylesheet" href="css/mobile.css">
+    <!--<![endif]-->
     <!--[if lt IE 9]>
         <link rel="stylesheet" href="css/ie8.css">
     <![endif]-->
@@ -24,7 +27,8 @@
 	<link rel="apple-touch-icon" href="images/apple-touch-icon.png">
 	<link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
 	<link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
-    
+
+    <script src="js/matchmedia.js"></script>
     <!--[if lt IE 9]>
         <script src="js/html5shiv.js"></script>
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
@@ -36,6 +40,7 @@
     <!--<![endif]-->
     <script src="js/plugins.js"></script>
     <script src="js/global.js"></script>
+
 </head>
 <body>
     <header>
@@ -44,10 +49,10 @@
             <div id="menu">
                 <nav>
                     <ul>
-                        <li><a href="?state=whats-our-story">What's our story?</a></li>
-                        <li><a href="?state=who-are-we">Who are we?</a></li>
-                        <li><a href="?state=what-can-we-do">What can we do?</a></li>
-                        <li><a href="?state=where-are-we">Where are we?</a></li>
+                        <li><a href="?state=whats-our-story"><span class="global">What's our story?</span><span class="mobile">Story</span></a></li>
+                        <li><a href="?state=who-are-we"><span class="global">Who are we?</span><span class="mobile">Team</span></a></li>
+                        <li><a href="?state=what-can-we-do"><span class="global">What can we do?</span><span class="mobile">Services</span></a></li>
+                        <li><a href="?state=where-are-we"><span class="global">Where are we?</span><span class="mobile">Contact</span></a></li>
                     </ul>
                 </nav>
                 <div class="dots"><div></div></div>
@@ -56,13 +61,24 @@
     </header>
     <section id="billboard-text">
         <div>
-            <p><span>Let's work together</span></p><br>
-            <p><span>to make your website</span></p><br>
-            <p><span><b class="special">beautiful</b> and <b class="special">functional</b>.</span></p>
+            <section>
+                <p><span>Let's work together</span></p><br>
+                <p><span>to make your website</span></p><br>
+                <p><span><b class="special">beautiful</b> and <b class="special">functional</b>.</span></p>
+            </section>
         </div>
         <a href="#" class="nav-starter">View Site</a>
     </section>
     <div id="billboard">
+        <section id="mobile-billboard-text">
+            <div>
+                <p><span>Let's make your</span></p><br>
+                <p><span>website more</span></p><br>
+                <p><span><b class="special">beautiful</b></span></p><br>
+                <p><span>and <b class="special">functional</b>.</span></p>
+            </div>
+            <a href="#" class="nav-starter">View Site</a>
+        </section>
     </div>
     <div id="content">
         <div id="top-menu-hack"></div>
@@ -135,7 +151,7 @@
                 <section id="services">
                     <ol>
                         <li class="graphics">
-                            <h3><span class="number">1.</span>Graphics design and brand development</h3>
+                            <h3><span class="number">1.</span><span class="mobile-change">Graphic design and brand development</span></h3>
                             <p>We're experts at design and branding. We'll discover what you want - even when you don't know what that is - and we'll <span class="special">bring it to life</span>. With your help, we'll work to pioneer the next big trend in design.</p>
                         </li>
                         <li class="photography offset-by-three">
@@ -163,7 +179,7 @@
             <div class="container">
                 <div class="twelve columns offset-by-two">
                     <div class="twitter-box">
-                        <div class="five columns alpha">
+                        <div class="h1-wrap five columns alpha">
                             <h1><img class="footer-icon" id="twitter-icon" src="images/twitter-icon.png" alt="twitter">@InfinitryWeb</h1>
                         </div>
                         <div class="tweet seven columns omega">
@@ -180,7 +196,7 @@
             <div class="container">
                 <div class="twelve columns offset-by-two">
                     <div class="blog-box">
-                        <div class="four columns alpha">
+                        <div class="h1-wrap four columns alpha">
                             <h1>Fresh off our presses</h1>
                         </div>
                         <div class="post eight columns omega">
@@ -217,5 +233,10 @@
             </div>
         </footer>
     </div>
+        <script>
+            /mobile/i.test(navigator.userAgent) && !window.location.hash && setTimeout(function () {
+                window.scrollTo(0, 1);
+            }, 1);
+        </script>
 </body>
 </html>

@@ -3,23 +3,26 @@
 
     //Close billy and open content
     var start = function (fn) {
-        var windowHeight = $(window).height(),
-            fnSet = (typeof fn !== "undefined");
+        var windowHeight = $('#billboard').height(),
+            fnSet = (typeof fn !== "undefined"),
+            thingToMove = (!matchMedia('only screen and (max-width: 767px)').matches) ? '#billboard-text' : '#billboard';
         
         $('#menu').unbind('touchstart').off('mouseenter mouseleave').unbind('click');
                 
-        $('#billboard-text').stop().animate({marginTop: -windowHeight}, 750, function () {
+        $(thingToMove).stop().animate({marginTop: -windowHeight}, 750, function () {
             $('#top-menu-hack').addClass('no-longer-necessary');
             $('html').removeClass('noscroll');
             $('header').addClass('active');
             openMenu();
-            $('header img').fadeIn(500);
+            if (!matchMedia('only screen and (max-width: 767px)').matches) {
+                $('header img').fadeIn(500);
+            }
             if (fnSet) {
                 fn(); //run callback once content is visible
             } else {
                 History.pushState({state: 'whats-our-story'}, 'Infinitry: What\'s our story?', '?state=whats-our-story');
             }
-            $('#billboard').data('router', true);        
+            $('#billboard').data('router', true);
         }); //slide billboard text out
         
         //});
@@ -28,7 +31,8 @@
     
     //Restart page
     var restart = function () {
-        var windowHeight = $(window).height();
+        var windowHeight = $('#billboard').height(),
+            thingToMove = (!matchMedia('only screen and (max-width: 767px)').matches) ? '#billboard-text' : '#billboard';
         
         $('#billboard').data('router', false);        
         $('header img').fadeOut(200);
@@ -36,7 +40,7 @@
         $('header').removeClass('active');
         $('html').addClass('noscroll');
         $('#top-menu-hack').removeClass('no-longer-necessary');
-        $('#billboard-text').stop().animate({marginTop: 0}, 750);
+        $(thingToMove).stop().animate({marginTop: 0}, 750);
         $('#menu').hover(function () {
             openMenu();
             $(this).bind('touchstart', function () {
@@ -54,7 +58,12 @@
     };
 
     var openMenu = function (fn) {
-        var width = ($(window).width() > 959) ? 768 : 660;
+        var width;
+        if (matchMedia('only screen and (max-width: 767px)').matches) {
+            width = 328;
+        } else {
+            width = ($(window).width() > 959) ? 768 : 660;
+        }
         if (typeof fn === "undefined") {
             fn = function () {};
         }
@@ -62,19 +71,21 @@
     };
     
     var closeMenu = function () {
-        $('#menu').stop().animate({width: 50}, 200, function () {
+        var width = (matchMedia('only screen and (max-width: 767px)').matches) ? 34 : 50;
+        $('#menu').stop().animate({width: width}, 200, function () {
             $(this).removeClass('menu-hover');
         });
     };
         
     var route = function (state) { //scrolls to the state's section
-        var scrollTo = $('#' + state).position().top; //get location of the section
+        var scrollTo = $('#' + state).position().top, //get location of the section
+            menuSize = (matchMedia('only screen and (max-width: 767px)').matches) ? 40 : 60;
         if (!$('#billboard').data('router')) {
         } else {
             $('#billboard').css('visibility','hidden');
-            $('#content').fadeTo(100, 0, function () {
-                $(window).scrollTop(scrollTo-60); //scroll there, leave room for the menu
-                $('#content').fadeTo(100, 100, function () {
+            $('#content').fadeTo(400, 0, function () {
+                $(window).scrollTop(scrollTo-menuSize); //scroll there, leave room for the menu
+                $('#content').fadeTo(400, 1, function () {
                     $('#billboard').css('visibility','visible');
                 });
             });
@@ -132,19 +143,22 @@
             if (!$('#billboard').data('router')) {
                 //billy menu click
                 var windowHeight = $(window).height(),
-                    scrollTo = $('#' + state).position().top; //get location of the section
+                    scrollTo = $('#' + state).position().top, //get location of the section
+                    thingToMove = (!matchMedia('only screen and (max-width: 767px)').matches) ? '#billboard-text' : '#billboard';
 
                 $('#top-menu-hack').addClass('no-longer-necessary');
                 $('#menu').unbind('touchstart').off('mouseenter mouseleave').unbind('click');
                 $('html').removeClass('noscroll');
                 $('header').addClass('active');
-                $('#content, #billboard, #billboard-text').fadeTo(100, 0, function () {
-                    $('#billboard-text').stop().css('marginTop', -windowHeight);
+                $('#content, #billboard, #billboard-text, #mobile-billboard-text').fadeTo(400, 0, function () {
+                    $(thingToMove).stop().css('marginTop', -windowHeight);
                     $(window).scrollTop(scrollTo-60); //scroll there, leave room for the menu
-                    $('#content, #billboard, #billboard-text').fadeTo(100, 100);
+                    $('#content, #billboard, #billboard-text, #mobile-billboard-text').fadeTo(400, 100);
                 });
                 openMenu();
-                $('header img').fadeIn(500);
+                if (!matchMedia('only screen and (max-width: 767px)').matches) {
+                    $('header img').fadeIn(500);
+                }
                 History.pushState({state: state}, title, '?state=' + state);
                 $('#billboard').data('router', true); 
             } else {
@@ -227,9 +241,11 @@
         
         //Stretch footer to 100% height
         $(window).resize(function () {
-            var windowHeight = $(window).height();
+            var windowHeight = $('#billboard').height(),
+                thingToMove = (!matchMedia('only screen and (max-width: 767px)').matches) ? '#billboard-text' : '#billboard';
+
             if ($('header').hasClass('active')) {
-                $('#billboard-text').css('marginTop', -windowHeight);
+                $(thingToMove).css('marginTop', -windowHeight);
             }
             $('footer .container').css('minHeight', windowHeight - 132); //not sure why, but it's always 52px too tall - and take off 70 more for padding
 
