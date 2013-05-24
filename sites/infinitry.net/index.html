@@ -11,7 +11,7 @@
 
     <meta name="description" content="">
 	<meta name="author" content="">
- 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, height=device-height">
+ 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Bitter:400,400italic">
     <link rel="stylesheet" href="css/base.css">
@@ -84,7 +84,7 @@
         <div id="top-menu-hack"></div>
         <section id="whats-our-story" data-statetitle="Infinitry: What's our story?">
             <div class="container">
-                <div class="eight columns">
+                <div id="our-story" class="eight columns">
                     <h1>What's our story?</h1>
                     <p>We're a hip, upstart design firm with <span class="special">infinite</span> possibilities. Infinitry began as two kids in middle school messing around with web design. Those two kids, Tommy Graves and Brandon Carroll, had no idea what they were getting themselves into.</p>
                     <p>After entering high school, they made their first attempt to start a web business, called Generation Studio. They made a website, distributed business cards, and tried to get the word out. But aside from a few small jobs from friends and family, they really didn't get enough business to sustain Generation Studio. That's when they decided to take things in a new direction.</p>
@@ -236,6 +236,10 @@
         <script>
             /mobile/i.test(navigator.userAgent) && !window.location.hash && setTimeout(function () {
                 window.scrollTo(0, 1);
+                $('html').removeClass('noscroll');
+                /*document.ontouchmove = function(event){
+                    event.preventDefault();
+                };*/
             }, 1);
         </script>
 </body>

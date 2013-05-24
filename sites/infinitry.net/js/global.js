@@ -3,7 +3,7 @@
 
     //Close billy and open content
     var start = function (fn) {
-        var windowHeight = $('#billboard').height(),
+        var windowHeight = $(window).height(),
             fnSet = (typeof fn !== "undefined"),
             thingToMove = (!matchMedia('only screen and (max-width: 767px)').matches) ? '#billboard-text' : '#billboard';
         
@@ -12,6 +12,7 @@
         $(thingToMove).stop().animate({marginTop: -windowHeight}, 750, function () {
             $('#top-menu-hack').addClass('no-longer-necessary');
             $('html').removeClass('noscroll');
+            //document.ontouchmove = null;
             $('header').addClass('active');
             openMenu();
             if (!matchMedia('only screen and (max-width: 767px)').matches) {
@@ -39,6 +40,9 @@
         closeMenu();
         $('header').removeClass('active');
         $('html').addClass('noscroll');
+        document.ontouchmove = function(event){
+            event.preventDefault();
+        };
         $('#top-menu-hack').removeClass('no-longer-necessary');
         $(thingToMove).stop().animate({marginTop: 0}, 750);
         $('#menu').hover(function () {
@@ -82,11 +86,11 @@
             menuSize = (matchMedia('only screen and (max-width: 767px)').matches) ? 40 : 60;
         if (!$('#billboard').data('router')) {
         } else {
-            $('#billboard').css('visibility','hidden');
+            $('#billboard, #billboard-text').css('visibility','hidden');
             $('#content').fadeTo(400, 0, function () {
                 $(window).scrollTop(scrollTo-menuSize); //scroll there, leave room for the menu
                 $('#content').fadeTo(400, 1, function () {
-                    $('#billboard').css('visibility','visible');
+                    $('#billboard, #billboard-text').css('visibility','visible');
                 });
             });
         }
@@ -108,7 +112,6 @@
     });
     
     $(function () {
-
         $('#menu').hover(function () {
             openMenu();
             $(this).bind('touchstart', function () {
@@ -150,6 +153,7 @@
                 $('#menu').unbind('touchstart').off('mouseenter mouseleave').unbind('click');
                 $('html').removeClass('noscroll');
                 $('header').addClass('active');
+                document.ontouchmove = null;
                 $('#content, #billboard, #billboard-text, #mobile-billboard-text').fadeTo(400, 0, function () {
                     $(thingToMove).stop().css('marginTop', -windowHeight);
                     $(window).scrollTop(scrollTo-60); //scroll there, leave room for the menu

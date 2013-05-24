@@ -11,8 +11,6 @@ html {
 }
 
 #billboard {
-    top: 0px;
-    left: 0px;
     height: 100%;
     width: 100%;
     background: url(../images/mobile/billboard-1.jpg) no-repeat center center;
@@ -197,9 +195,20 @@ nav .mobile {
 	box-shadow: 0 1px 10px rgba(35,31,32,.95);
 }
 
-
 #whats-our-story {
     padding: 25px 0 0 0;
+}
+
+#whats-our-story .container {
+    width: 100%;
+}
+
+#our-story {
+    width: 300px;
+    position: relative;
+    margin: 0 auto;
+    float: none;
+    display: block;
 }
 
 #whats-our-story p {
@@ -225,8 +234,8 @@ nav .mobile {
 
 .our-work {
     margin-top: 35px !important;
-    margin-left: -10px !important;
-    width: 320px !important;
+    margin-left: 0px !important;
+    width: 100% !important;
 }
 
 #quote {
@@ -522,4 +531,77 @@ form div {
     font-size: 0.75em;
     margin-top: 35px;
     padding-bottom: 35px;
+}
+
+@media only screen and (min-width: 480px) and (max-width: 767px) {
+    #mobile-billboard-text {
+        display: none;
+    }
+    
+    #billboard {
+        background-image: url(../images/billboard-1.jpg);
+    }
+    
+    #billboard-text {
+        display: table;
+        position: absolute;
+        margin-left: -200px;
+    }
+    
+    #billboard-text p {
+        font-size: 1.91em;
+        padding: 0px 8px;
+        height: 46px;
+        line-height: 46px;
+    }
+    
+    #our-story {
+        width: 420px;
+    }
+    
+    #quote figure {
+        padding-top: 33px;
+        padding-bottom: 42px;
+    }
+    
+    #quote .h1-wrap {
+        width: 390px;
+    }
+    
+    #quote blockquote {
+        width: 390px;
+    }
+    
+    #quote .caption {
+        margin-top: 13px;
+        font-size: 1.15em;
+    }
+    
+    .twitter-box, .blog-box {
+        width: 400px !important;
+    }
+    
+    #twitter .h1-wrap, #blog .h1-wrap {
+        width: 400px;
+        padding-bottom: 20px;
+    }
+    
+    .tweet, .blog-box .post {
+        padding-top: 20px;
+    }
+    
+    .blog-box .post {
+        margin-top: 0px;
+    }
+    
+    #contact input, #contact textarea {
+        width: 398px;
+    }
+    
+    #contact button {
+        width: 50%;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
 }
