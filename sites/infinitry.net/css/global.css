@@ -1,14 +1,87 @@
 #some-of-our-work {
-    height: 550px;
     background: url(../images/blue-bg.png);
     -webkit-box-shadow: inset 0 5px 20px rgba(35,31,32,.5);
 	-moz-box-shadow: inset 0 5px 20px rgba(35,31,32,.5);
 	box-shadow: inset 0 5px 20px rgba(35,31,32,.5);
+    padding-bottom: 100px;
 }
 
 #some-of-our-work .container {
-    background: url(../images/hack.png) no-repeat center 58px;
-    height: 100%;
+    text-align: center;
+}
+
+#some-of-our-work h1 {
+    font-size: 1.5em;
+    margin: 0;
+    padding: 0;
+    padding-top: 57px;
+    color: #fff
+}
+
+#some-of-our-work h1 span {
+    padding: 0px 20px;
+    font-size: .75em;
+}
+
+#some-of-our-work h2 {
+    display: none;
+}
+
+#some-of-our-work .work-box {
+    height: 350px;
+    margin-left: 60px;
+    margin-top: 30px;
+    padding-left: 0;
+    background: url(../images/who-are-we.png);
+    position: relative;
+    -webkit-box-shadow: 0 0 20px rgba(0,0,0,.3);
+	-moz-box-shadow: 0 0 20px rgba(0,0,0,.3);
+	box-shadow: 0 0 20px rgba(0,0,0,.3);
+}
+
+#work-box-left, #work-box-right {
+    width: 83px;
+    height: 83px;
+    opacity: .9;
+    background: url(../images/portfolio-buttons.png);
+    position: absolute;
+    top: 50%;
+    margin-top: -35px;
+    text-indent: -9999px;
+    z-index: 2;
+}
+
+#work-box-left:hover, #work-box-right:hover {
+    opacity: 1;
+}
+
+#work-box-left {
+    left: -33px;
+}
+
+#work-box-right {
+    background-position: 0px -83px;
+    right: -33px;
+}
+
+.work-box div {
+    overflow: hidden;
+    height: 310px;
+    width: 780px;
+    margin: 20px;
+}
+
+.work-box ul {
+    width: 9999px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    position: relative;
+    z-index: 1;
+}
+
+.work-box li {
+    float: left;
 }
 
 body, html {
@@ -1026,9 +1099,14 @@ input:-moz-placeholder { font-style: italic; color: #666699;}
             margin-top: 12px;
         } 
     
-    #some-of-our-work .container {
-        background: url(../images/hack-ipad.png) no-repeat center 58px;
-    }
+        #some-of-our-work h1 {
+            font-size: 1.25em;
+        }
+    
+        .work-box div {
+            width: 612px;
+        }
+    
     
         footer .container{
             overflow: hidden;

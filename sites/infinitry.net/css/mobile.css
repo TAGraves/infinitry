@@ -189,6 +189,7 @@ nav .mobile {
 }
 
 #top-menu-hack {
+    display: none;
     height: 40px;
     -webkit-box-shadow: 0 1px 10px rgba(35,31,32,.95);
 	-moz-box-shadow: 0 1px 10px rgba(35,31,32,.95);
@@ -388,6 +389,70 @@ nav .mobile {
     color: #000;
 }
 
+#some-of-our-work {
+    padding-bottom: 75px;
+}
+
+#some-of-our-work h1 {
+    display: none;
+}
+
+#some-of-our-work h2 {
+    display: block !important;
+    font-size: 1.2em;
+    margin: 0;
+    padding: 0;
+    padding-top: 33px;
+    color: #fff
+}
+
+#some-of-our-work h2 span {
+    padding: 0px 10px;
+    font-size: .75em;
+}
+
+#some-of-our-work h2 {
+    display: none;
+}
+
+
+#some-of-our-work .work-box {
+    width: 280px;
+    margin: 30px 10px;
+}
+
+.work-box div {
+    width: 240px;
+}
+
+#work-box-left, #work-box-right {
+    width: 16px;
+    height: 32px;
+    opacity: 1;
+    background: url(../images/mobile/portfolio-buttons.png);
+    top: 405px;
+    margin-top: -35px;
+}
+
+#work-box-left {
+    left: 50%;
+    margin-left: -43px;
+}
+
+#work-box-left:hover {
+    background-position: -16px 0px;
+}
+
+#work-box-right {
+    right: 50%;
+    background-position: 0px -32px;
+    margin-right: -43px;
+}
+
+#work-box-right:hover {
+    background-position: -16px -32px;
+}
+
 #twitter, #blog {
     background: url(../images/mobile/twitter-bg.jpg) no-repeat center center;
     height: auto;
@@ -575,6 +640,25 @@ form div {
     #quote .caption {
         margin-top: 13px;
         font-size: 1.15em;
+    }
+    
+    
+    #some-of-our-work .work-box {
+        width: 420px;
+        margin-left: 0;
+        margin-right: 0;
+    }
+    
+    .work-box div {
+        width: 380px;
+    }
+    
+    #work-box-left {
+        margin-left: -69px;
+    }
+    
+    #work-box-right {
+        margin-right: -69px;
     }
     
     .twitter-box, .blog-box {
