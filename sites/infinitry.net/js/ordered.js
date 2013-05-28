@@ -203,7 +203,7 @@
                 menu.open();
                 menu.logo.show();
             },
-            unactivate: function () {
+            deactivate: function () {
                 var menu = App.menu;
                 menu.logo.hide();
                 menu.close();
@@ -287,7 +287,7 @@
 
                 billboard.hasRouted = false;
                     if (App.device.isDesktop()) {
-                        menu.unactivate();
+                        menu.deactivate();
                     }
                 page.scrolling.disable();
                 $('#top-menu-hack').removeClass('no-longer-necessary');
@@ -392,14 +392,26 @@
             });
         });
         
-        //Stretch footer to 100% height
         $(window).resize(function () {
-            var windowHeight = $('#billboard').height(),
-                thingToMove = (!matchMedia('only screen and (max-width: 479px)').matches) ? '#billboard-text' : '#billboard';
+            var windowHeight = App.device.height(),
+                thingToMove = (App.device.isMobile()) ? '#billboard' : '#billboard-text';
 
             if (App.billboard.hasRouted) {
                 $(thingToMove).css('marginTop', -windowHeight);
+                
+                if (App.device.isDesktop()) {
+                    $('#billboard').css('marginTop',0);
+                    App.menu.activate();
+                } else {
+                    if ($('header').hasClass('active')) { //went from desktop size to mobile size
+                        App.menu.deactivate();
+                    }
+                }
+                
+                
             }
+            
+            //Stretch footer to 100% height
             $('footer .container').css('minHeight', windowHeight - 132); //not sure why, but it's always 52px too tall - and take off 70 more for padding
 
         }).trigger('resize'); //stretch footer on page load
